@@ -1,0 +1,12 @@
+# dependencies & builds
+node_modules/
+dist/
+*.local
+
+# OS / editor
+.DS_Store
+*.log
+
+# local Claude Code tooling (reinstall with: npx impeccable skills install)
+.claude/*
+!.claude/launch.json

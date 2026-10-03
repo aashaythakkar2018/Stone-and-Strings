@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strength &amp; Steadiness Bracelets — Black Onyx &amp; Grounding Stones | Stone &amp; Strings</title>
+<meta name="description" content="Strength bracelets built on black onyx and clear quartz, hand-strung to order in Georgia. Natural and dyed stones both disclosed honestly — no exceptions.">
+<link rel="canonical" href="https://stoneandstrings.com/collections/strength">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://stoneandstrings.com/"},
+    {"@type":"ListItem","position":2,"name":"Shop","item":"https://stoneandstrings.com/collections/all"},
+    {"@type":"ListItem","position":3,"name":"Strength & Steadiness","item":"https://stoneandstrings.com/collections/strength"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Strength & Steadiness Bracelets",
+  "description": "Gemstone bracelets built around black onyx and clear quartz, worn as a daily reminder of steadiness and resolve. Hand-strung to order in Georgia; every stone's origin and treatment disclosed."
+}
+</script>
+<!-- ItemList below lists only the one confirmed catalog product (Held Ground) — the other 2 pieces this
+     collection will eventually hold are not yet specified by Vidhi (see build note at bottom of file).
+     In production this whole block is a Liquid {% for product in collection.products %} loop; do not
+     hand-author individual ItemList entries once the real catalog is connected. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Product",
+        "name": "Held Ground — Black Onyx & Clear Quartz Bracelet",
+        "url": "https://stoneandstrings.com/products/held-ground-black-onyx-clear-quartz-bracelet",
+        "offers": {"@type":"Offer","priceCurrency":"USD","price":"98.00","availability":"https://schema.org/InStock"}
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   STONE & STRINGS — COLLECTION TEMPLATE PROTOTYPE
+   Flagship example: Strength & Steadiness (data-driven choice — see
+   build note at the bottom of this file for why this intention, not
+   Love & Self-Worth, was chosen as the reference build).
+   Shares the exact design tokens as homepage/PDP/Custom Studio. This
+   ONE template (hero/intro → filter bar → product grid → cross-links)
+   is reused for all 5 intention collections and 5 stone collections —
+   only the hero copy, stone chips, and {% for %} product loop change.
+   ═══════════════════════════════════════════════════════════════ */
+:root{
+  --rust:#a3412c; --rust-deep:#7d2f1f; --peach:#be6754;
+  --cream:#dec4ad; --sand:#ffd5b0; --paper:#f6efe6; --paper-2:#efe5d7;
+  --olive:#40462c; --sage:#89965e; --ink:#2b2622; --ink-soft:#5c534a;
+  --line:#e2d3c1; --ok:#5f7138; --disc:#9a6a2f;
+  --maxw:1240px; --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;margin:0;line-height:1.1;letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--rust);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+.script{font-family:"Pinyon Script",cursive}
+.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--peach);font-weight:600;margin:0}
+.muted{color:var(--ink-soft)}
+.inline-link{color:var(--rust);border-bottom:1px solid var(--cream);transition:.3s}
+.inline-link:hover{border-color:var(--rust)}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:200}
+.skip:focus{left:8px;top:8px}
+.beads{display:flex;align-items:center;gap:9px;opacity:.55}
+.beads i{width:6px;height:6px;border-radius:50%;background:var(--peach)}
+.beads i:nth-child(odd){width:4px;height:4px;background:var(--cream)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 28px;border:none;border-radius:2px;
+  font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;transition:.35s var(--ease)}
+.btn--solid{background:var(--rust);color:var(--paper)}
+.btn--solid:hover{background:var(--rust-deep)}
+.btn--ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:var(--paper)}
+.textlink{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--rust);
+  border-bottom:1px solid var(--rust);padding-bottom:3px;display:inline-block}
+.announce{background:var(--olive);color:var(--paper);text-align:center;font-size:11px;
+  letter-spacing:.2em;text-transform:uppercase;padding:9px 16px}
+.announce b{color:var(--sand);font-weight:600}
+.hdr{position:sticky;top:0;z-index:50;background:rgba(246,239,230,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hdr-in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:18px 32px;max-width:var(--maxw);margin:0 auto}
+.nav{display:flex;gap:30px;align-items:center}
+.nav a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:4px 0;position:relative}
+.nav a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--rust);transition:.3s var(--ease)}
+.nav a:hover::after,.nav a[aria-current="page"]::after{width:100%}
+.brand{font-family:"Cormorant Garamond",serif;font-size:26px;letter-spacing:.16em;font-weight:600;text-align:center;color:var(--rust);text-transform:uppercase;white-space:nowrap}
+.brand small{display:block;font-size:8px;letter-spacing:.42em;color:var(--ink-soft);margin-top:1px;font-family:"Helvetica Neue",sans-serif;font-weight:600}
+.util{display:flex;gap:20px;justify-content:flex-end;align-items:center}
+.util a{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--ink)}
+.util a:hover{color:var(--rust)}
+.cart-dot{background:var(--rust);color:var(--paper);border-radius:50%;font-size:10px;padding:1px 6px;margin-left:5px}
+.burger{display:none;background:none;border:none;font-size:22px}
+.ph{position:relative;overflow:hidden;background:var(--cream);isolation:isolate}
+.ph-rust{background:radial-gradient(120% 120% at 30% 20%,#b9543b,var(--rust) 55%,var(--rust-deep))}
+.ph-warm{background:radial-gradient(130% 130% at 70% 15%,var(--sand),var(--cream) 45%,var(--peach) 110%)}
+.ph-olive{background:radial-gradient(120% 120% at 25% 25%,#565d3c,var(--olive) 70%)}
+.ph-sand{background:linear-gradient(150deg,var(--sand),var(--cream) 70%,#e9d3ba)}
+.ph-dusk{background:radial-gradient(120% 120% at 25% 25%,#5c4433,#2f2318)}
+.ph-grain::before{content:"";position:absolute;inset:0;opacity:.05;z-index:1;
+  background-image:radial-gradient(circle at 1px 1px,#000 1px,transparent 0);background-size:6px 6px}
+.badge{position:absolute;top:12px;left:12px;z-index:3;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:5px 9px;border-radius:2px;background:rgba(246,239,230,.94)}
+.badge.nat{color:var(--ok)} .badge.disc{color:var(--disc)}
+.crumb{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding:18px 0 0}
+.crumb a:hover{color:var(--rust)}
+.crumb span{margin:0 6px;opacity:.5}
+
+/* ── collection hero/intro ── */
+.col-hero{padding:clamp(40px,5.5vw,68px) 0 clamp(36px,4.5vw,52px);border-bottom:1px solid var(--line)}
+.col-hero-in{max-width:800px}
+.col-hero h1{font-size:clamp(36px,4.6vw,58px);margin-top:12px}
+.col-hero .sub{margin-top:10px;font-size:15px;color:var(--peach);font-weight:600;letter-spacing:.02em;font-family:"Helvetica Neue",sans-serif;text-transform:uppercase;font-size:11px;letter-spacing:.18em}
+.col-hero p.lede{margin-top:22px;font-size:16.5px;color:var(--ink-soft);max-width:66ch}
+.col-hero .stone-tags{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.stone-tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--ink);border:1px solid var(--line);padding:6px 12px;border-radius:20px;background:var(--paper-2)}
+
+/* ── filter/sort bar ── */
+.filterbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.filter-chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{font-size:11.5px;letter-spacing:.06em;font-weight:600;padding:8px 16px;border:1px solid var(--line);border-radius:20px;background:transparent;color:var(--ink-soft);transition:.25s}
+.chip.is-active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip:hover{border-color:var(--rust);color:var(--rust)}
+.sortbox{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ink-soft)}
+.sortbox select{padding:8px 12px;border:1px solid var(--line);background:var(--paper);font-family:inherit;font-size:12.5px;border-radius:2px;color:var(--ink)}
+.count{font-size:12px;color:var(--ink-soft)}
+
+/* ── grid ── */
+.gridwrap{padding:clamp(40px,5vw,64px) 0 clamp(56px,6vw,84px)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 24px}
+.card .thumb{aspect-ratio:1/1;border-radius:3px;overflow:hidden;position:relative;margin-bottom:16px}
+.card:hover .thumb .ph{transform:scale(1.04)}
+.card .thumb .ph{width:100%;height:100%;transition:.6s var(--ease)}
+.card h3{font-size:21px;margin-bottom:3px}
+.card .stones{font-size:12px;color:var(--ink-soft);margin-bottom:8px}
+.card .row{display:flex;justify-content:space-between;align-items:baseline}
+.card .price{font-family:"Cormorant Garamond",serif;font-size:20px;color:var(--rust)}
+.card .intent-tag{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);font-weight:600}
+.card.soon{border:1px dashed var(--cream);border-radius:3px;padding:24px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:100%}
+.card.soon .thumb{width:60px;height:60px;border-radius:50%;background:var(--paper-2);margin-bottom:16px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line)}
+.card.soon p{font-size:13px;color:var(--ink-soft);font-style:italic;font-family:"Cormorant Garamond",serif}
+
+/* ── trust strip ── */
+.trust-strip{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust-strip .wrap{display:flex;justify-content:center;gap:36px;padding:24px 32px;flex-wrap:wrap}
+.trust-strip .t-item{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink-soft)}
+.trust-strip .dot{width:6px;height:6px;border-radius:50%;background:var(--sage);flex:none}
+
+/* ── other-intentions cross-links ── */
+.sec{padding:clamp(56px,7vw,90px) 0}
+.sec-head{text-align:center;max-width:60ch;margin:0 auto 48px}
+.sec-head h2{font-size:clamp(30px,3.6vw,44px);margin-top:14px}
+.intents{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.intent{position:relative;aspect-ratio:3/4;border-radius:3px;overflow:hidden;display:flex;align-items:flex-end;color:var(--paper);transition:.5s var(--ease)}
+.intent:hover{transform:translateY(-6px)}
+.intent .in{position:relative;z-index:2;padding:20px 18px;width:100%}
+.intent::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 40%,rgba(43,38,34,.62))}
+.intent h3{font-size:21px;line-height:1.05;color:var(--paper)}
+.intent span{font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.85;display:block;margin-top:6px}
+.i1{background:radial-gradient(120% 120% at 30% 20%,#8a97b6,#5a6685)}
+.i3{background:radial-gradient(120% 120% at 30% 20%,#e0a05c,#b9682f)}
+.i4{background:radial-gradient(120% 120% at 30% 20%,#d98aa0,#a85a72)}
+.i5{background:radial-gradient(120% 120% at 30% 20%,#6f8fa8,#3f5f79)}
+
+.foot{background:var(--ink);color:var(--paper)}
+.foot .wrap{padding:60px 32px 32px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px}
+.foot h2{font-family:"Cormorant Garamond",serif;font-size:26px;color:var(--sand);margin-bottom:10px}
+.foot .fbrand small{display:block;font-size:14px;color:rgba(246,239,230,.65);max-width:30ch;margin-top:10px;line-height:1.6}
+.foot .col b{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);display:block;margin-bottom:16px}
+.foot .col a{display:block;font-size:14px;color:rgba(246,239,230,.8);padding:5px 0}
+.foot-bot{border-top:1px solid rgba(246,239,230,.16);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:rgba(246,239,230,.55);letter-spacing:.06em}
+
+@media(max-width:1080px){
+  .foot-top{grid-template-columns:1fr 1fr}
+  .intents{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:860px){
+  .nav,.util{display:none}.hdr-in{grid-template-columns:auto 1fr auto}.burger{display:block}
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:520px){
+  .wrap{padding:0 20px}.pgrid,.intents{grid-template-columns:1fr}.foot-top{grid-template-columns:1fr}
+  .filterbar{flex-direction:column;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="announce" role="region" aria-label="Announcements">Handmade to order in Georgia, USA &nbsp;·&nbsp; <b>Free 30-day repair</b> on every piece &nbsp;·&nbsp; Each stone, honestly labelled</div>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <nav class="nav" aria-label="Primary">
+      <a href="/collections/all" aria-current="page">Shop</a>
+      <a href="/pages/custom">Custom</a>
+      <a href="/pages/our-stones">Our Stones</a>
+      <a href="/pages/about">Meet Vidhi</a>
+    </nav>
+    <a class="brand" href="stone-and-strings-homepage-FINAL.html" aria-label="Stone and Strings home">Stone &amp; Strings<small>MEANING, MADE MODERN</small></a>
+    <div class="util">
+      <a href="/search" aria-label="Search">Search</a>
+      <a href="/account" aria-label="Account">Account</a>
+      <a href="/cart" aria-label="Cart">Cart<span class="cart-dot">0</span></a>
+    </div>
+    <button class="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<nav class="wrap crumb" aria-label="Breadcrumb">
+  <a href="stone-and-strings-homepage-FINAL.html">Home</a><span>/</span>
+  <a href="/collections/all">Shop</a><span>/</span>
+  <span>Strength &amp; Steadiness</span>
+</nav>
+
+<main id="main">
+
+  <!-- ═══ collection-hero.liquid — H1 lives here, the only H1 on the page ═══ -->
+  <div class="wrap col-hero" data-ss-section="collection-hero">
+    <div class="col-hero-in">
+      <p class="eyebrow">By Intention</p>
+      <h1>Strength &amp; Steadiness</h1>
+      <p class="lede">Black onyx has long been worn as a grounding stone — a piece people reach for on the days they need to hold steady. Paired here with clear quartz, it's the base of our steadiness line: a strength bracelet built to be worn daily, not just on hard days. The onyx in this collection is dyed to reach its deep, even black — and we say so plainly, the same as everywhere else on this site.</p>
+      <div class="stone-tags">
+        <span class="stone-tag">Black Onyx</span>
+        <span class="stone-tag">Clear Quartz</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ collection-filters.liquid — Shopify native/app filtering, tag-driven ═══ -->
+  <div class="wrap filterbar" data-ss-section="collection-filters">
+    <div class="filter-chips" role="group" aria-label="Filter by stone">
+      <button class="chip is-active" type="button">All stones</button>
+      <button class="chip" type="button">Black Onyx</button>
+      <button class="chip" type="button">Clear Quartz</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px">
+      <span class="count">1 of 3 pieces shown — 2 pending catalog data</span>
+      <div class="sortbox">
+        <label for="sort">Sort</label>
+        <select id="sort" name="sort">
+          <option>Featured</option>
+          <option>Price, low to high</option>
+          <option>Price, high to low</option>
+          <option>Newest</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ collection-grid.liquid — Shopify: {% for product in collection.products %} ═══ -->
+  <div class="wrap gridwrap" data-ss-section="collection-grid">
+    <div class="pgrid">
+      <a class="card" href="/products/held-ground-black-onyx-clear-quartz-bracelet">
+        <div class="thumb"><div class="ph ph-dusk ph-grain"><span class="badge disc">Dyed · disclosed</span></div></div>
+        <h3>Held Ground</h3><div class="stones">Black Onyx · Clear Quartz</div>
+        <div class="row"><span class="price">$98</span><span class="intent-tag">Strength &amp; Steadiness</span></div>
+      </a>
+      <!-- Placeholder cards — NOT invented products. The homepage build noted 3 pieces in this
+           collection but only Held Ground has confirmed name/stones/price from Vidhi's source
+           material. Do not fill these with fabricated products; replace with real {% for %}
+           output once the full 30-piece catalog is loaded. -->
+      <div class="card soon" aria-hidden="true">
+        <div class="thumb">✦</div>
+        <p>2 more pieces<br>in this collection —<br>catalog data pending</p>
+      </div>
+      <div class="card soon" aria-hidden="true">
+        <div class="thumb">✦</div>
+        <p>Full Strength &amp;<br>Steadiness line<br>coming soon</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ collection-trust.liquid ═══ -->
+  <div class="trust-strip" data-ss-section="collection-trust">
+    <div class="wrap">
+      <span class="t-item"><span class="dot"></span>Free 30-day repair on every piece</span>
+      <span class="t-item"><span class="dot"></span>Handmade to order in Georgia, USA</span>
+      <span class="t-item"><span class="dot"></span>Natural and dyed stones, always disclosed</span>
+    </div>
+  </div>
+
+  <!-- ═══ collection-cross-links.liquid — sibling intentions, never sibling by price ═══ -->
+  <section class="sec" data-ss-section="collection-cross-links" aria-labelledby="h-other">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow">Looking for a different feeling?</p><h2 id="h-other">The other four intentions</h2></div>
+      <div class="intents">
+        <a class="intent i1" href="/collections/calm"><span class="in"><h3>Calm &amp; Stillness</h3><span>Shop the line</span></span></a>
+        <a class="intent i3" href="/collections/confidence"><span class="in"><h3>Confidence &amp; Courage</h3><span>Shop the line</span></span></a>
+        <a class="intent i4" href="/collections/love"><span class="in"><h3>Love &amp; Self-Worth</h3><span>Shop the line</span></span></a>
+        <a class="intent i5" href="/collections/clarity"><span class="in"><h3>Clarity &amp; Focus</h3><span>Shop the line</span></span></a>
+      </div>
+      <div class="center" style="text-align:center;margin-top:44px"><a class="textlink" href="/pages/our-stones">Or explore by stone instead →</a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="fbrand">
+        <div class="fbrand-name" style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--sand)">Stone &amp; Strings</div>
+        <div class="beads" style="margin:6px 0 0"><i></i><i></i><i></i><i></i><i></i></div>
+        <small>Handmade gemstone bracelets, strung to order in Georgia. Meaning, made modern — and every material told honestly.</small>
+      </div>
+      <nav class="col" aria-label="Shop"><b>Shop</b><a href="/collections/all">All bracelets</a><a href="/collections/calm">By intention</a><a href="/pages/our-stones">By stone</a><a href="/collections/new">New arrivals</a><a href="/collections/under-50">Under $50</a></nav>
+      <nav class="col" aria-label="The studio"><b>The studio</b><a href="/pages/about">Meet Vidhi</a><a href="/pages/custom">Custom studio</a><a href="/pages/our-stones">Our stones</a><a href="/blogs/journal">Journal</a><a href="/pages/contact">Contact</a></nav>
+      <nav class="col" aria-label="Help and care"><b>Help &amp; care</b><a href="/pages/care">Care guide</a><a href="/pages/repairs">Repairs &amp; guarantee</a><a href="/pages/faq">FAQ</a><a href="/policies/shipping-policy">Shipping &amp; returns</a><a href="https://instagram.com/stoneandstringsofficial" target="_blank" rel="noopener">Instagram ↗</a></nav>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Stone &amp; Strings · Made in Georgia, USA</span>
+      <span>Meaning, made modern</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ BUILD NOTE — why Strength & Steadiness, not Love & Self-Worth, is the reference build ═══
+"love bracelet" shows 7,600 US searches/mo — the biggest number in the entire intention keyword
+set — which made it the obvious first pick. Live SERP-checked instead: page 1 is Cartier's LOVE
+bracelet line (DR81, ~56K traffic/mo on that URL alone), Zales, Kay, Bloomingdale's, Macy's, and
+generic couple/romantic charm bracelets. Zero gemstone-intention brands present. That volume is a
+false positive — a term collision with an unrelated luxury/gift product, not real demand for this
+brand's Love & Self-Worth collection. Chasing it would be building on a number that looks real and
+isn't (violates the "truth before strategy" principle this whole project runs on).
+"strength bracelet" (900/mo, KD 0) SERP-checked clean by comparison: the field is small mantra/
+affirmation-jewelry brands (Little Words Project, MantraBand, Freida Rothman, Dot & Dash Design) —
+no major retailer holds a position, and DR/traffic per competitor is small (7–45 est. visits/mo).
+This is the one intention collection with real, honestly winnable search demand — hence the
+template's flagship build. Love & Self-Worth still gets built (all 5 intentions ship), but its SEO
+plan should target the smaller, correctly-matched terms ("self love bracelet," 50/mo) rather than
+the misleading 7,600/mo headline number. Full data: claude/collection-template-research-and-decision.md
+═══ -->
+</body>
+</html>

@@ -1,0 +1,86 @@
+/* ═══════════════════════════════════════════════════════════════
+   STONE & STRINGS — DESIGN TOKENS
+   Source of truth: SS_Brandkit (colour pages 13–14, typography 9–11)
+   and the shared :root block in every approved prototype.
+   In Shopify this file becomes assets/ss-tokens.css, loaded once in theme.liquid.
+   ═══════════════════════════════════════════════════════════════ */
+:root {
+  /* ── Brand palette (brand kit, exact hex) ── */
+  --rust: #a3412c;        /* primary — CTAs, price, wordmark */
+  --rust-deep: #7d2f1f;   /* hover / pressed */
+  --peach: #be6754;       /* eyebrows, secondary accent */
+  --cream: #dec4ad;       /* warm neutral, logo on dark */
+  --sand: #ffd5b0;        /* highlight on dark sections */
+  --olive: #40462c;       /* dark sections */
+  --sage: #89965e;        /* intention tags, trust dots */
+
+  /* ── Prototype neutrals ── */
+  --paper: #f6efe6;
+  --paper-2: #efe5d7;
+  --ink: #2b2622;
+  --ink-soft: #5c534a;
+  --line: #e2d3c1;
+
+  /* ── Treatment-disclosure pairing (trust mechanic — keep consistent) ── */
+  --ok: #5f7138;          /* "Natural" */
+  --disc: #9a6a2f;        /* "Dyed · disclosed" */
+
+  /* ── Semantic aliases ── */
+  --color-primary: var(--rust);
+  --color-primary-hover: var(--rust-deep);
+  --color-secondary: var(--olive);
+  --color-accent: var(--peach);
+  --color-background: var(--paper);
+  --color-surface: var(--paper-2);
+  --color-text: var(--ink);
+  --color-muted: var(--ink-soft);
+  --color-border: var(--line);
+  --color-error: #a3412c;
+
+  /* ── Typography ──
+     Brand kit primary is Hollen (licensed display face, not supplied as a web font).
+     Approved prototypes stand in with Cormorant Garamond. If a Hollen webfont licence
+     is bought, drop the @font-face in and it takes over automatically. */
+  --font-display: "Hollen", "Cormorant Garamond", Georgia, serif;
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-script: "Pinyon Script", cursive;
+
+  --text-xs: 11px;
+  --text-sm: 13px;
+  --text-base: 16px;
+  --text-lg: 17px;
+  --tracking-eyebrow: .28em;
+  --tracking-button: .18em;
+
+  /* ── Spacing ── */
+  --space-xs: 8px;
+  --space-sm: 14px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+  --space-2xl: clamp(64px, 9vw, 120px);
+  --gutter: 32px;
+
+  /* ── Layout ── */
+  --container-width: 1240px;
+  --content-width: 820px;
+  --maxw: var(--container-width);
+  --header-h: 72px;
+
+  /* ── Shape & motion ── */
+  --radius-sm: 2px;
+  --radius: 3px;
+  --radius-lg: 4px;
+  --radius-pill: 20px;
+  --ease: cubic-bezier(.22, .61, .36, 1);
+  --dur: .35s;
+  --shadow-panel: 0 20px 60px rgba(43, 38, 34, .18);
+  --z-header: 50;
+  --z-overlay: 90;
+  --z-toast: 120;
+}
+
+@media (max-width: 520px) {
+  :root { --gutter: 20px; --header-h: 64px; }
+}

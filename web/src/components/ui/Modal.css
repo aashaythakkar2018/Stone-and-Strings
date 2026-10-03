@@ -1,0 +1,19 @@
+.modal { position: fixed; inset: 0; z-index: var(--z-overlay); display: flex; justify-content: center; }
+.modal--center { align-items: center; padding: 20px; }
+.modal--top { align-items: flex-start; }
+.modal__scrim { position: absolute; inset: 0; background: rgba(43, 38, 34, .42); animation: fadeIn .3s var(--ease) both; }
+.modal__panel {
+  position: relative; background: var(--paper); box-shadow: var(--shadow-panel); outline: none;
+  max-height: 100%; overflow-y: auto; overscroll-behavior: contain;
+}
+.modal--center .modal__panel { width: min(560px, 100%); border-radius: var(--radius-lg); padding: 28px; animation: modalIn .35s var(--ease) both; }
+.modal--top .modal__panel {
+  width: 100%; padding: 28px var(--gutter) 40px; max-height: 88vh;
+  animation: sheetDown .4s var(--ease) both; border-bottom: 1px solid var(--line);
+}
+.modal__head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.modal--top .modal__head { position: absolute; top: 16px; right: var(--gutter); }
+.modal__title { font-size: 28px; }
+
+@keyframes modalIn { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes sheetDown { from { opacity: 0; transform: translateY(-24px); } to { opacity: 1; transform: none; } }

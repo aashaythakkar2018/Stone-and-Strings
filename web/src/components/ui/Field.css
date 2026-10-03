@@ -1,0 +1,22 @@
+.field { display: flex; flex-direction: column; }
+.field__label {
+  display: block; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600;
+  margin-bottom: 8px; color: var(--ink-soft);
+}
+.field__control {
+  width: 100%; padding: 13px 14px; border: 1px solid var(--line); background: var(--paper);
+  font-size: 15px; border-radius: var(--radius-sm); color: var(--ink); transition: border-color .25s;
+  appearance: none; -webkit-appearance: none;
+}
+.field__control:hover { border-color: var(--cream); }
+.field__control:focus { border-color: var(--rust); outline: none; box-shadow: 0 0 0 3px rgba(163, 65, 44, .12); }
+.field__control::placeholder { color: rgba(92, 83, 74, .6); }
+.field__control--area { min-height: 140px; resize: vertical; line-height: 1.5; }
+.field__select { position: relative; }
+.field__select .field__control { padding-right: 40px; cursor: pointer; }
+.field__chev { position: absolute; right: 12px; top: 50%; width: 16px; height: 16px; transform: translateY(-50%); pointer-events: none; color: var(--ink-soft); }
+.field--compact .field__control { padding: 8px 34px 8px 12px; font-size: 12.5px; }
+.field--compact .field__chev { right: 10px; width: 14px; height: 14px; }
+.field__hint { font-size: 12px; color: var(--ink-soft); margin-top: 6px; }
+.field__error { font-size: 12px; color: var(--color-error); margin-top: 6px; font-weight: 600; }
+.has-error .field__control { border-color: var(--color-error); }

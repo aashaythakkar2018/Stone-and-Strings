@@ -1,0 +1,42 @@
+.drawer { position: fixed; inset: 0; z-index: var(--z-overlay); }
+.drawer__scrim {
+  position: absolute; inset: 0; background: rgba(43, 38, 34, .42);
+  animation: fadeIn .35s var(--ease) both;
+}
+.drawer__panel {
+  position: absolute; top: 0; bottom: 0; width: min(440px, 100%);
+  background: var(--paper); display: flex; flex-direction: column; box-shadow: var(--shadow-panel);
+  outline: none;
+}
+.drawer--right .drawer__panel { right: 0; animation: slideInR .42s var(--ease) both; }
+.drawer--left .drawer__panel { left: 0; animation: slideInL .42s var(--ease) both; }
+.drawer.is-closing { pointer-events: none; }
+.drawer.is-closing .drawer__scrim { animation: fadeOut .3s var(--ease) both; }
+.drawer--right.is-closing .drawer__panel { animation: slideOutR .3s var(--ease) both; }
+.drawer--left.is-closing .drawer__panel { animation: slideOutL .3s var(--ease) both; }
+
+.drawer__head {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 20px 24px; border-bottom: 1px solid var(--line);
+}
+.drawer__title { font-size: 26px; }
+.drawer__body { flex: 1; overflow-y: auto; padding: 8px 24px 24px; overscroll-behavior: contain; }
+.drawer__foot { border-top: 1px solid var(--line); padding: 20px 24px calc(20px + env(safe-area-inset-bottom)); background: var(--paper-2); }
+
+.icon-btn {
+  display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px;
+  background: none; border: none; border-radius: 50%; color: var(--ink); transition: background .25s, color .25s;
+}
+.icon-btn:hover { background: var(--paper-2); color: var(--rust); }
+.icon-btn svg { width: 20px; height: 20px; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+@keyframes slideInR { from { transform: translateX(100%); } to { transform: none; } }
+@keyframes slideOutR { from { transform: none; } to { transform: translateX(100%); } }
+@keyframes slideInL { from { transform: translateX(-100%); } to { transform: none; } }
+@keyframes slideOutL { from { transform: none; } to { transform: translateX(-100%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer.is-closing { display: none; }
+}

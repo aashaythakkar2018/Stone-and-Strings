@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stone &amp; Strings — Handmade Gemstone Bracelets, Made With Meaning</title>
+<meta name="description" content="Handmade gemstone bracelets strung to order in a Georgia studio. Honest materials, fully disclosed. Shop by intention — labradorite, jade, amethyst and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://stoneandstrings.com/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Stone & Strings",
+  "url": "https://stoneandstrings.com/",
+  "founder": { "@type": "Person", "name": "Vidhi" },
+  "sameAs": ["https://instagram.com/stoneandstringsofficial"],
+  "slogan": "Meaning, made modern"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Stone & Strings",
+  "url": "https://stoneandstrings.com/"
+}
+</script>
+<!-- Architecture doc §6: Organization + WebSite schema is global (theme.liquid); Product/Offer/FAQ/CollectionPage/AboutPage schema is per-template — see the PDP prototype. -->
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   STONE & STRINGS — HOMEPAGE (production reference)
+   Design tokens below are the source of truth for the whole theme.
+   In Shopify: move :root tokens into assets/ss-tokens.css, loaded in theme.liquid.
+   Each <section data-ss-section="…"> maps to one Liquid file in /sections.
+   ═══════════════════════════════════════════════════════════════ */
+:root{
+  --rust:#a3412c; --rust-deep:#7d2f1f; --peach:#be6754;
+  --cream:#dec4ad; --sand:#ffd5b0; --paper:#f6efe6; --paper-2:#efe5d7;
+  --olive:#40462c; --sage:#89965e; --ink:#2b2622; --ink-soft:#5c534a;
+  --line:#e2d3c1; --ok:#5f7138; --disc:#9a6a2f;
+  --maxw:1240px; --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;margin:0;line-height:1.08;letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--rust);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+.script{font-family:"Pinyon Script",cursive}
+.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--peach);font-weight:600;margin:0}
+.muted{color:var(--ink-soft)}
+.inline-link{color:var(--rust);border-bottom:1px solid var(--cream);transition:.3s}
+.inline-link:hover{border-color:var(--rust)}
+
+/* skip link */
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:200}
+.skip:focus{left:8px;top:8px}
+
+/* bead motif */
+.beads{display:flex;align-items:center;gap:9px;opacity:.55}
+.beads i{width:6px;height:6px;border-radius:50%;background:var(--peach)}
+.beads i:nth-child(odd){width:4px;height:4px;background:var(--cream)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 30px;border:none;border-radius:2px;
+  font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;transition:.35s var(--ease)}
+.btn--solid{background:var(--rust);color:var(--paper)}
+.btn--solid:hover{background:var(--rust-deep)}
+.btn--ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:var(--paper)}
+.btn--cream{background:var(--paper);color:var(--rust)}
+.btn--cream:hover{background:var(--sand)}
+.textlink{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--rust);
+  border-bottom:1px solid var(--rust);padding-bottom:3px;display:inline-block}
+
+/* announcement */
+.announce{background:var(--olive);color:var(--paper);text-align:center;font-size:11px;
+  letter-spacing:.2em;text-transform:uppercase;padding:9px 16px}
+.announce b{color:var(--sand);font-weight:600}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(246,239,230,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hdr-in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:18px 32px;max-width:var(--maxw);margin:0 auto}
+.nav{display:flex;gap:30px;align-items:center}
+.nav a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:4px 0;position:relative}
+.nav a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--rust);transition:.3s var(--ease)}
+.nav a:hover::after,.nav a[aria-current]::after{width:100%}
+.brand{font-family:"Cormorant Garamond",serif;font-size:26px;letter-spacing:.16em;font-weight:600;text-align:center;color:var(--rust);text-transform:uppercase;white-space:nowrap}
+.brand small{display:block;font-size:8px;letter-spacing:.42em;color:var(--ink-soft);margin-top:1px;font-family:"Helvetica Neue",sans-serif;font-weight:600}
+.util{display:flex;gap:20px;justify-content:flex-end;align-items:center}
+.util a{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--ink)}
+.util a:hover{color:var(--rust)}
+.cart-dot{background:var(--rust);color:var(--paper);border-radius:50%;font-size:10px;padding:1px 6px;margin-left:5px}
+.burger{display:none;background:none;border:none;font-size:22px}
+
+/* photo placeholders (replace with <img> in production) */
+.ph{position:relative;overflow:hidden;background:var(--cream);isolation:isolate}
+.ph[data-cap]::after{content:attr(data-cap);position:absolute;left:0;right:0;bottom:12px;text-align:center;
+  font-style:italic;font-family:"Cormorant Garamond",serif;font-size:14px;color:rgba(43,38,34,.5)}
+.ph-rust{background:radial-gradient(120% 120% at 30% 20%,#b9543b,var(--rust) 55%,var(--rust-deep))}
+.ph-warm{background:radial-gradient(130% 130% at 70% 15%,var(--sand),var(--cream) 45%,var(--peach) 110%)}
+.ph-olive{background:radial-gradient(120% 120% at 25% 25%,#565d3c,var(--olive) 70%)}
+.ph-sand{background:linear-gradient(150deg,var(--sand),var(--cream) 70%,#e9d3ba)}
+.ph-grain::before{content:"";position:absolute;inset:0;opacity:.05;z-index:1;
+  background-image:radial-gradient(circle at 1px 1px,#000 1px,transparent 0);background-size:6px 6px}
+.ph .cap-script{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--paper);text-align:center;padding:24px;z-index:2}
+.ph .cap-script .script{font-size:clamp(32px,4.4vw,58px);line-height:1;opacity:.96}
+
+/* hero */
+.hero{position:relative;min-height:88vh;display:grid;grid-template-columns:1.05fr .95fr}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:64px clamp(32px,6vw,96px);background:var(--paper)}
+.hero-copy .eyebrow{margin-bottom:22px}
+.hero-copy h1{font-size:clamp(44px,6.2vw,82px);letter-spacing:.005em}
+.hero-copy h1 em{font-style:italic;color:var(--rust)}
+.hero-copy .lede{font-size:17px;max-width:46ch;margin:26px 0 0;color:var(--ink-soft)}
+.hero-cta{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap}
+.hero-visual{position:relative;min-height:60vh}
+.hero-tag{position:absolute;left:26px;bottom:24px;z-index:3;background:rgba(246,239,230,.9);padding:9px 16px;border-radius:2px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--rust)}
+
+/* section shell */
+.sec{padding:clamp(64px,9vw,120px) 0}
+.sec-head{text-align:center;max-width:60ch;margin:0 auto 56px}
+.sec-head h2{font-size:clamp(34px,4.4vw,56px);margin-top:16px}
+.sec-head p{margin:18px auto 0;color:var(--ink-soft);max-width:54ch}
+.center{text-align:center}
+
+/* intentions */
+.intents{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.intent{position:relative;aspect-ratio:3/4.4;border-radius:3px;overflow:hidden;display:flex;align-items:flex-end;color:var(--paper);transition:.5s var(--ease)}
+.intent:hover{transform:translateY(-6px)}
+.intent .in{position:relative;z-index:2;padding:22px 20px;width:100%}
+.intent::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 40%,rgba(43,38,34,.62))}
+.intent h3{font-size:24px;line-height:1.05;color:var(--paper)}
+.intent span{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.85;display:block;margin-top:8px}
+.i1{background:radial-gradient(120% 120% at 30% 20%,#8a97b6,#5a6685)}
+.i2{background:radial-gradient(120% 120% at 30% 20%,#5c4433,#3a2b20)}
+.i3{background:radial-gradient(120% 120% at 30% 20%,#e0a05c,#b9682f)}
+.i4{background:radial-gradient(120% 120% at 30% 20%,#d98aa0,#a85a72)}
+.i5{background:radial-gradient(120% 120% at 30% 20%,#6f8fa8,#3f5f79)}
+
+/* pledge */
+.pledge{background:var(--olive);color:var(--paper)}
+.pledge .wrap{padding:clamp(56px,7vw,84px) 32px}
+.pledge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;text-align:center}
+.pledge-item h3{font-size:26px;color:var(--sand);margin-bottom:12px}
+.pledge-item p{color:rgba(246,239,230,.82);font-size:15px;max-width:32ch;margin:0 auto}
+.pledge-note{text-align:center;margin-top:48px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(20px,2.6vw,30px);opacity:.95}
+.pledge-note b{color:var(--sand);font-style:normal;font-weight:500}
+.pledge-note a{color:var(--sand);border-bottom:1px solid rgba(255,213,176,.5)}
+
+/* product grid */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 24px}
+.card .thumb{aspect-ratio:1/1;border-radius:3px;overflow:hidden;position:relative;margin-bottom:16px}
+.card:hover .thumb .ph{transform:scale(1.04)}
+.card .thumb .ph{width:100%;height:100%;transition:.6s var(--ease)}
+.badge{position:absolute;top:12px;left:12px;z-index:3;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:5px 9px;border-radius:2px;background:rgba(246,239,230,.94)}
+.badge.nat{color:var(--ok)} .badge.disc{color:var(--disc)}
+.card h3{font-size:21px;margin-bottom:3px}
+.card .stones{font-size:12px;color:var(--ink-soft);margin-bottom:8px}
+.card .row{display:flex;justify-content:space-between;align-items:baseline}
+.card .price{font-family:"Cormorant Garamond",serif;font-size:20px;color:var(--rust)}
+.card .intent-tag{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);font-weight:600}
+
+/* meet vidhi */
+.vidhi{display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.vidhi .v-visual{min-height:66vh}
+.vidhi .v-copy{padding:clamp(40px,6vw,96px)}
+.vidhi .v-copy h2{font-size:clamp(34px,4.4vw,56px);margin:14px 0 0}
+.vidhi .v-copy p{margin-top:22px;color:var(--ink-soft);max-width:46ch}
+.vidhi .sig{font-family:"Pinyon Script",cursive;font-size:44px;color:var(--rust);margin-top:20px;line-height:1}
+
+/* our stones teaser */
+.stones-teaser{background:var(--paper-2)}
+.stones-teaser .wrap{padding:clamp(56px,7vw,90px) 32px}
+.stones-row{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:8px}
+.stone-chip{text-align:center}
+.stone-chip .dot{aspect-ratio:1/1;border-radius:50%;margin-bottom:12px;transition:.4s var(--ease)}
+.stone-chip:hover .dot{transform:scale(1.06)}
+.stone-chip h3{font-size:19px}
+.stone-chip span{font-size:11px;color:var(--ink-soft);letter-spacing:.02em}
+.sd1{background:radial-gradient(circle at 35% 30%,#8aa0c4,#41597c)}
+.sd2{background:radial-gradient(circle at 35% 30%,#d98aa0,#a85a72)}
+.sd3{background:radial-gradient(circle at 35% 30%,#c9a0d6,#7d5a94)}
+.sd4{background:radial-gradient(circle at 35% 30%,#e6b98f,#c07a3f)}
+.sd5{background:radial-gradient(circle at 35% 30%,#e9dcc8,#c9b79b)}
+
+/* custom strip */
+.customstrip{position:relative;color:var(--paper);text-align:center;overflow:hidden}
+.customstrip .ph{position:absolute;inset:0;z-index:0}
+.customstrip .inner{position:relative;z-index:2;padding:clamp(72px,10vw,140px) 24px}
+.customstrip h2{font-size:clamp(38px,5.5vw,72px);color:var(--paper)}
+.customstrip p{max-width:48ch;margin:20px auto 34px;color:rgba(246,239,230,.9)}
+.customstrip::after{content:"";position:absolute;inset:0;z-index:1;background:rgba(43,38,34,.42)}
+
+/* kind words */
+.kw{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.kw-card{background:var(--paper-2);border:1px solid var(--line);border-radius:3px;padding:32px 28px}
+.kw-card .stars{color:var(--peach);letter-spacing:3px;font-size:13px;margin-bottom:14px}
+.kw-card blockquote{margin:0;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;line-height:1.45}
+.kw-card .who{margin-top:16px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+.kw-empty{border:1px dashed var(--cream);background:transparent;display:flex;align-items:center;justify-content:center;text-align:center}
+.kw-empty p{font-style:italic;color:var(--ink-soft);font-size:15px;font-family:"Cormorant Garamond",serif}
+
+/* newsletter */
+.news{background:var(--olive);color:var(--paper)}
+.news .wrap{padding:clamp(56px,7vw,90px) 32px;text-align:center}
+.news h2{font-size:clamp(30px,3.6vw,46px);color:var(--paper)}
+.news p{color:rgba(246,239,230,.82);margin:14px auto 28px;max-width:46ch}
+.news form{display:flex;gap:10px;max-width:460px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.news input{flex:1;min-width:220px;padding:14px 18px;border:1px solid rgba(255,213,176,.4);background:rgba(246,239,230,.08);color:var(--paper);font-family:inherit;font-size:14px;border-radius:2px}
+.news input::placeholder{color:rgba(246,239,230,.5)}
+.news small{display:block;margin-top:14px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sand)}
+
+/* footer */
+.foot{background:var(--ink);color:var(--paper)}
+.foot .wrap{padding:72px 32px 40px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:52px}
+.foot h2{font-family:"Cormorant Garamond",serif;font-size:28px;color:var(--sand);margin-bottom:10px}
+.foot .fbrand small{display:block;font-size:14px;color:rgba(246,239,230,.65);max-width:30ch;margin-top:10px;line-height:1.6}
+.foot .col b{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);display:block;margin-bottom:16px}
+.foot .col a{display:block;font-size:14px;color:rgba(246,239,230,.8);padding:5px 0;transition:.3s}
+.foot .col a:hover{color:var(--paper);padding-left:5px}
+.foot-bot{border-top:1px solid rgba(246,239,230,.16);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:rgba(246,239,230,.55);letter-spacing:.06em}
+
+@media(max-width:1080px){
+  .hero{grid-template-columns:1fr}.hero-visual{min-height:52vh;order:-1}
+  .vidhi{grid-template-columns:1fr}.vidhi .v-visual{min-height:46vh}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){
+  .nav,.util{display:none}.hdr-in{grid-template-columns:auto 1fr auto}.burger{display:block}
+  .intents{grid-template-columns:repeat(2,1fr)}.pgrid{grid-template-columns:repeat(2,1fr)}
+  .pledge-grid,.kw{grid-template-columns:1fr}.stones-row{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:520px){
+  .wrap{padding:0 20px}.intents,.pgrid,.stones-row{grid-template-columns:1fr}
+  .hero-copy{padding:48px 24px}.foot-top{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- data-ss-section maps each block to a Liquid file in /sections -->
+
+<!-- announcement-bar.liquid -->
+<div class="announce" role="region" aria-label="Announcements">Handmade to order in Georgia, USA &nbsp;·&nbsp; <b>Free 30-day repair</b> on every piece &nbsp;·&nbsp; Each stone, honestly labelled</div>
+
+<!-- header-main.liquid (global) -->
+<header class="hdr">
+  <div class="hdr-in">
+    <nav class="nav" aria-label="Primary">
+      <a href="/collections/all" aria-current="page">Shop</a>
+      <a href="/pages/custom">Custom</a>
+      <a href="/pages/our-stones">Our Stones</a>
+      <a href="/pages/about">Meet Vidhi</a>
+    </nav>
+    <a class="brand" href="/" aria-label="Stone and Strings home">Stone &amp; Strings<small>MEANING, MADE MODERN</small></a>
+    <div class="util">
+      <a href="/search" aria-label="Search">Search</a>
+      <a href="/account" aria-label="Account">Account</a>
+      <a href="/cart" aria-label="Cart">Cart<span class="cart-dot">0</span></a>
+    </div>
+    <button class="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ═══ home-hero.liquid ═══ H1 lives here (the only H1 on the page) -->
+  <section class="hero" data-ss-section="home-hero" aria-label="Introduction">
+    <div class="hero-copy">
+      <p class="eyebrow">Handmade · small-batch · strung to order</p>
+      <h1>Handmade gemstone bracelets, <em>worn for meaning</em></h1>
+      <p class="lede">Strung one at a time in a small Georgia studio — chosen for the moment you're in, and labelled with the honest truth of every material inside. This is jewellery you understand before you wear it.</p>
+      <div class="hero-cta">
+        <a class="btn btn--solid" href="/collections/all">Shop by intention</a>
+        <a class="btn btn--ghost" href="/pages/custom">Design a custom piece</a>
+      </div>
+    </div>
+    <div class="hero-visual ph ph-rust ph-grain">
+      <!-- PRODUCTION IMG alt: "A gemstone bracelet resting on an open hand in natural light" -->
+      <div class="cap-script"><span class="script">made for the way<br>you move through the day</span></div>
+      <span class="hero-tag">Vidhi's hands · natural light</span>
+    </div>
+  </section>
+
+  <!-- ═══ home-intentions.liquid ═══ -->
+  <section class="sec" data-ss-section="home-intentions" aria-labelledby="h-intentions">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Find your piece</p>
+        <h2 id="h-intentions">Shop by intention</h2>
+        <p>Not by trend, not by price — by the feeling you're reaching for. Every bracelet lives in one of five quiet places.</p>
+      </div>
+      <div class="intents">
+        <a class="intent i1" href="/collections/calm"><span class="in"><h3>Calm &amp; Stillness</h3><span>10 pieces</span></span></a>
+        <a class="intent i2" href="/collections/strength"><span class="in"><h3>Strength &amp; Steadiness</h3><span>3 pieces</span></span></a>
+        <a class="intent i3" href="/collections/confidence"><span class="in"><h3>Confidence &amp; Courage</h3><span>8 pieces</span></span></a>
+        <a class="intent i4" href="/collections/love"><span class="in"><h3>Love &amp; Self-Worth</h3><span>6 pieces</span></span></a>
+        <a class="intent i5" href="/collections/clarity"><span class="in"><h3>Clarity &amp; Focus</h3><span>3 pieces</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ home-pledge.liquid ═══ the differentiator, stated -->
+  <section class="pledge" data-ss-section="home-pledge" aria-labelledby="h-pledge">
+    <div class="wrap">
+      <h2 id="h-pledge" class="center" style="color:var(--sand);font-size:clamp(30px,3.6vw,46px);margin-bottom:44px">Our promise on every piece</h2>
+      <div class="pledge-grid">
+        <div class="pledge-item">
+          <h3>Handmade by Vidhi</h3>
+          <p>Every piece strung by one pair of hands — gemologist-trained, small-batch, never mass-produced.</p>
+        </div>
+        <div class="pledge-item">
+          <h3>Honest materials</h3>
+          <p>We tell you what's natural and what's dyed or plated. On every product page, in plain words.</p>
+        </div>
+        <div class="pledge-item">
+          <h3>Made in Georgia</h3>
+          <p>Strung to order in a home studio in the U.S. — and repaired free for the first 30 days.</p>
+        </div>
+      </div>
+      <p class="pledge-note">Most brands won't tell you when a stone is dyed. <b>We always will.</b> &nbsp;<a class="" href="/pages/our-stones">See how we disclose →</a></p>
+    </div>
+  </section>
+
+  <!-- ═══ home-featured.liquid ═══ (Shopify: {% for product in collections.frontpage.products %}) -->
+  <section class="sec" data-ss-section="home-featured" aria-labelledby="h-featured">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">New &amp; loved</p>
+        <h2 id="h-featured">Founder favourites</h2>
+      </div>
+      <div class="pgrid" id="home-grid">
+        <a class="card" href="stone-of-insight-pdp-prototype.html">
+          <div class="thumb"><div class="ph ph-rust ph-grain" data-cap="Labradorite · blue flash"><span class="badge nat">Natural</span></div></div>
+          <h3>Stone of Insight</h3><div class="stones">Labradorite · Clear Quartz</div>
+          <div class="row"><span class="price">$118</span><span class="intent-tag">Clarity &amp; Focus</span></div>
+        </a>
+        <a class="card" href="/products/held-ground-black-onyx-clear-quartz-bracelet">
+          <div class="thumb"><div class="ph ph-olive ph-grain" data-cap="Black onyx · in-hand"><span class="badge disc">Dyed · disclosed</span></div></div>
+          <h3>Held Ground</h3><div class="stones">Black Onyx · Clear Quartz</div>
+          <div class="row"><span class="price">$98</span><span class="intent-tag">Strength &amp; Steadiness</span></div>
+        </a>
+        <a class="card" href="/products/lit-from-within-sunstone-freshwater-pearl-bracelet">
+          <div class="thumb"><div class="ph ph-warm ph-grain" data-cap="Sunstone · warm light"><span class="badge nat">Natural</span></div></div>
+          <h3>Lit From Within</h3><div class="stones">Sunstone · Freshwater Pearl</div>
+          <div class="row"><span class="price">$66</span><span class="intent-tag">Confidence &amp; Courage</span></div>
+        </a>
+        <a class="card" href="/products/still-waters-amethyst-pearl-bracelet">
+          <div class="thumb"><div class="ph ph-sand ph-grain" data-cap="Amethyst · soft focus"><span class="badge nat">Natural</span></div></div>
+          <h3>Still Waters</h3><div class="stones">Amethyst · Freshwater Pearl</div>
+          <div class="row"><span class="price">$62</span><span class="intent-tag">Calm &amp; Stillness</span></div>
+        </a>
+        <a class="card" href="/products/tender-contrast-pink-opal-black-spinel-bracelet">
+          <div class="thumb"><div class="ph ph-warm ph-grain" data-cap="Pink opal · on-wrist"><span class="badge nat">Natural</span></div></div>
+          <h3>Tender Contrast</h3><div class="stones">Pink Opal · Black Spinel</div>
+          <div class="row"><span class="price">$108</span><span class="intent-tag">Love &amp; Self-Worth</span></div>
+        </a>
+        <a class="card" href="/products/clear-path-apatite-pearl-bracelet">
+          <div class="thumb"><div class="ph ph-sand ph-grain" data-cap="Apatite · clean blue"><span class="badge nat">Natural</span></div></div>
+          <h3>Clear Path</h3><div class="stones">Apatite · Freshwater Pearl</div>
+          <div class="row"><span class="price">$68</span><span class="intent-tag">Clarity &amp; Focus</span></div>
+        </a>
+      </div>
+      <div class="center" style="margin-top:48px">
+        <a class="btn btn--ghost" href="/collections/all">View all bracelets</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ home-founder.liquid ═══ -->
+  <section class="vidhi" data-ss-section="home-founder" aria-labelledby="h-vidhi">
+    <div class="v-visual ph ph-warm ph-grain" data-cap="Vidhi at the bench"></div>
+    <!-- PRODUCTION IMG alt: "Vidhi, founder of Stone & Strings, stringing a bracelet at her studio bench" -->
+    <div class="v-copy">
+      <p class="eyebrow">The studio</p>
+      <h2 id="h-vidhi">Meet Vidhi</h2>
+      <p>Trained as a gemologist under a master with thirty-five years at the bench, Vidhi started Stone &amp; Strings with a single bracelet made for someone she loved. Every piece since carries the same idea — jewellery that means something, made honestly, by hand.</p>
+      <p>She still strings each order herself, and still tells you exactly what's inside it. If you want something entirely your own, that starts at the <a class="inline-link" href="/pages/custom">Custom Studio</a>.</p>
+      <p class="sig">Vidhi</p>
+      <div style="margin-top:22px"><a class="btn btn--ghost" href="/pages/about">Read Vidhi's story</a></div>
+    </div>
+  </section>
+
+  <!-- ═══ home-stones-teaser.liquid ═══ (SEO hub + internal linking) -->
+  <section class="stones-teaser" data-ss-section="home-stones-teaser" aria-labelledby="h-stones">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Know before you wear</p>
+        <h2 id="h-stones">Explore the stones</h2>
+        <p>Where each stone comes from, what it has meant across cultures, and how we use it — no health claims, just the honest story.</p>
+      </div>
+      <div class="stones-row">
+        <a class="stone-chip" href="/collections/labradorite"><div class="dot sd1"></div><h3>Labradorite</h3><span>The stone of insight</span></a>
+        <a class="stone-chip" href="/collections/pink-jade"><div class="dot sd2"></div><h3>Pink Jade</h3><span>Tenderness, softly worn</span></a>
+        <a class="stone-chip" href="/collections/amethyst"><div class="dot sd3"></div><h3>Amethyst</h3><span>The quiet hour</span></a>
+        <a class="stone-chip" href="/collections/sunstone"><div class="dot sd4"></div><h3>Sunstone</h3><span>Warmth, chosen</span></a>
+        <a class="stone-chip" href="/collections/pearl"><div class="dot sd5"></div><h3>Freshwater Pearl</h3><span>Our signature thread</span></a>
+      </div>
+      <div class="center" style="margin-top:44px"><a class="textlink" href="/pages/our-stones">Explore every stone</a></div>
+    </div>
+  </section>
+
+  <!-- ═══ home-custom.liquid ═══ the strategic front door -->
+  <section class="customstrip" data-ss-section="home-custom" aria-labelledby="h-custom">
+    <div class="ph ph-olive ph-grain"></div>
+    <!-- PRODUCTION IMG alt: "A custom bracelet being made by hand at the studio bench" -->
+    <div class="inner">
+      <p class="eyebrow" style="color:var(--sand)">The custom studio</p>
+      <h2 id="h-custom">Made for the story only you have</h2>
+      <p>An initial, a word you live by, a family's birthstones. Tell Vidhi the meaning — she'll design the piece around it. Custom pieces start at $125.</p>
+      <a class="btn btn--cream" href="/pages/custom">Start a custom piece</a>
+    </div>
+  </section>
+
+  <!-- ═══ home-reviews.liquid ═══ (Shopify: Judge.me widget; empty-state until reviews exist) -->
+  <section class="sec" data-ss-section="home-reviews" aria-labelledby="h-kind">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow">In their words</p><h2 id="h-kind">Kind words</h2></div>
+      <div class="kw">
+        <figure class="kw-card">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote>"She told me the jade was dyed before I even asked. I've never had a jewellery brand be that honest — bought two more."</blockquote>
+          <figcaption class="who">— Priya, first order</figcaption>
+        </figure>
+        <figure class="kw-card">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote>"The labradorite catches light exactly like she said it would. It feels made for me, because it was."</blockquote>
+          <figcaption class="who">— A custom piece</figcaption>
+        </figure>
+        <div class="kw-card kw-empty">
+          <p>Your words, soon.<br>Every order invites a review —<br>this is where they'll live.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ home-newsletter.liquid ═══ (Shopify: Klaviyo embedded form; no discount) -->
+  <section class="news" data-ss-section="home-newsletter" aria-labelledby="h-news">
+    <div class="wrap">
+      <h2 id="h-news">First looks, and the stories behind the stones</h2>
+      <p>New pieces before anyone else, plus a short guide to the stones and how to care for them. No spam, no discount games.</p>
+      <form action="#" method="post" aria-label="Newsletter signup">
+        <label for="nl-email" class="skip">Email address</label>
+        <input id="nl-email" type="email" placeholder="Your email" required>
+        <button class="btn btn--cream" type="submit">Join</button>
+      </form>
+      <small>First access · stone guide · honest care notes</small>
+    </div>
+  </section>
+</main>
+
+<!-- footer-main.liquid (global) -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="fbrand">
+        <div class="fbrand-name" style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--sand)">Stone &amp; Strings</div>
+        <div class="beads" style="margin:6px 0 0"><i></i><i></i><i></i><i></i><i></i></div>
+        <small>Handmade gemstone bracelets, strung to order in Georgia. Meaning, made modern — and every material told honestly.</small>
+      </div>
+      <nav class="col" aria-label="Shop"><b>Shop</b><a href="/collections/all">All bracelets</a><a href="/collections/calm">By intention</a><a href="/pages/our-stones">By stone</a><a href="/collections/new">New arrivals</a><a href="/collections/under-50">Under $50</a></nav>
+      <nav class="col" aria-label="The studio"><b>The studio</b><a href="/pages/about">Meet Vidhi</a><a href="/pages/custom">Custom studio</a><a href="/pages/our-stones">Our stones</a><a href="/blogs/journal">Journal</a><a href="/pages/contact">Contact</a></nav>
+      <nav class="col" aria-label="Help and care"><b>Help &amp; care</b><a href="/pages/care">Care guide</a><a href="/pages/repairs">Repairs &amp; guarantee</a><a href="/pages/faq">FAQ</a><a href="/policies/shipping-policy">Shipping &amp; returns</a><a href="https://instagram.com/stoneandstringsofficial" target="_blank" rel="noopener">Instagram ↗</a></nav>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Stone &amp; Strings · Made in Georgia, USA</span>
+      <span>Meaning, made modern</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Featured grid is static markup here (was a JS-injected demo loop in the earlier draft).
+     In Shopify this section is a Liquid {% for product in collections.frontpage.products %} loop —
+     see home-featured.liquid; the card markup above is what that loop should emit per product. -->
+</body>
+</html>

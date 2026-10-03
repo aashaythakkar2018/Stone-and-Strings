@@ -1,0 +1,133 @@
+/* Base, typography and shared primitives — ported from the prototypes' shared stylesheet. */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+body.is-locked { overflow: hidden; }
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: .01em;
+}
+p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; color: inherit; }
+input, select, textarea { font-family: inherit; }
+:focus-visible { outline: 2px solid var(--rust); outline-offset: 3px; border-radius: 2px; }
+::selection { background: var(--sand); color: var(--ink); }
+/* Browser surfaces carry the palette too */
+html { scrollbar-color: var(--cream) var(--paper); accent-color: var(--rust); }
+input, textarea { caret-color: var(--rust); }
+a { text-underline-offset: .2em; }
+.price, .card__price, .info__price, .citem__total, .csum__rows dd, .cart-dot { font-variant-numeric: tabular-nums lining-nums; }
+/* Focus ring stays visible on the dark brand grounds (rust ring would vanish on rust/olive/ink) */
+.pledge :focus-visible, .news :focus-visible, .customstrip :focus-visible, .foot :focus-visible,
+.statement :focus-visible, .materials__head :focus-visible, .announce :focus-visible, .mega__feature:focus-visible { outline-color: var(--sand); }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
+.narrow { max-width: var(--content-width); margin: 0 auto; }
+.center { text-align: center; }
+.script { font-family: var(--font-script); font-weight: 400; }
+.muted { color: var(--ink-soft); }
+.sr-only {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip {
+  position: absolute; left: -999px; top: 0; background: var(--ink); color: var(--paper);
+  padding: 10px 16px; z-index: 200;
+}
+.skip:focus { left: 8px; top: 8px; }
+
+.eyebrow {
+  font-size: var(--text-xs); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase;
+  color: var(--peach-text); font-weight: 600; margin: 0;
+}
+.inline-link { color: var(--rust); border-bottom: 1px solid var(--cream); transition: border-color .3s; }
+.inline-link:hover { border-color: var(--rust); }
+.textlink {
+  font-size: 12px; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; color: var(--rust);
+  border-bottom: 1px solid var(--rust); padding-bottom: 3px; display: inline-block;
+  transition: color .3s, border-color .3s; background: none; border-top: 0; border-left: 0; border-right: 0;
+}
+.textlink:hover { color: var(--rust-deep); border-color: var(--rust-deep); }
+
+/* bead motif (from the wordmark's necklace) */
+.beads { display: flex; align-items: center; gap: 9px; opacity: .55; }
+.beads i { width: 6px; height: 6px; border-radius: 50%; background: var(--peach); }
+.beads i:nth-child(odd) { width: 4px; height: 4px; background: var(--cream); }
+
+/* section shell */
+.sec { padding: var(--space-2xl) 0; }
+.sec--tight { padding: clamp(56px, 7vw, 90px) 0; }
+.sec-head { text-align: center; max-width: 60ch; margin: 0 auto 56px; }
+.sec-head h2 { font-size: clamp(34px, 4.4vw, 56px); margin-top: 16px; }
+.sec-head--sm h2 { font-size: clamp(30px, 3.6vw, 44px); margin-top: 14px; }
+.sec-head p { margin: 18px auto 0; color: var(--ink-soft); max-width: 54ch; }
+
+/* ── photo placeholders: brand-toned gradients used until real photography exists ── */
+.ph { position: relative; overflow: hidden; background: var(--cream); isolation: isolate; }
+.ph--rust { background: radial-gradient(120% 120% at 30% 20%, #b9543b, var(--rust) 55%, var(--rust-deep)); }
+.ph--warm { background: radial-gradient(130% 130% at 70% 15%, var(--sand), var(--cream) 45%, var(--peach) 110%); }
+.ph--olive { background: radial-gradient(120% 120% at 25% 25%, #565d3c, var(--olive) 70%); }
+.ph--sand { background: linear-gradient(150deg, var(--sand), var(--cream) 70%, #e9d3ba); }
+.ph--indigo { background: radial-gradient(120% 120% at 30% 20%, #5a6dab, #33407a); }
+.ph--dusk { background: radial-gradient(120% 120% at 25% 25%, #5c4433, #2f2318); }
+.ph--violet { background: radial-gradient(120% 120% at 30% 20%, #b48bc8, #6f4f86); }
+.ph--rose { background: radial-gradient(120% 120% at 30% 20%, #e6a9b5, #b0687c); }
+.ph--sky { background: radial-gradient(120% 120% at 30% 20%, #8fb5c4, #4f7b8f); }
+.ph--grain::before {
+  content: ""; position: absolute; inset: 0; opacity: .05; z-index: 1; pointer-events: none;
+  background-image: radial-gradient(circle at 1px 1px, #000 1px, transparent 0); background-size: 6px 6px;
+}
+.ph__cap {
+  position: absolute; left: 0; right: 0; bottom: 12px; text-align: center; z-index: 2;
+  font-style: italic; font-family: var(--font-heading); font-size: 14px; color: rgba(43, 38, 34, .5);
+}
+.ph--rust .ph__cap, .ph--olive .ph__cap, .ph--indigo .ph__cap, .ph--dusk .ph__cap, .ph--violet .ph__cap,
+.ph--sky .ph__cap { color: rgba(246, 239, 230, .62); }
+
+/* trust dots row */
+.trust-items { display: flex; gap: 22px; flex-wrap: wrap; }
+.trust-items .t-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-soft); }
+.trust-items .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage); flex: none; }
+
+/* page fade-in */
+.page-enter { animation: pageIn .5s var(--ease) both; }
+@keyframes pageIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+/* Reduced motion: remove movement, keep state feedback (colour/opacity changes still fade). */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important; scroll-behavior: auto !important;
+    transition-property: color, background-color, border-color, opacity, box-shadow, outline-color !important;
+    transition-duration: .15s !important;
+  }
+}
+
+/* SmartImage */
+.smart-img { width: 100%; height: 100%; }
+.smart-img__img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;
+  opacity: 0; transition: opacity .5s var(--ease);
+}
+.smart-img__img.is-loaded { opacity: 1; }
+
+/* breadcrumbs */
+.crumb { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); padding-top: 18px; }
+.crumb ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 6px; }
+.crumb a:hover { color: var(--rust); }
+.crumb__sep { opacity: .5; }
+.crumb [aria-current] { color: var(--ink); }
+main:focus { outline: none; }

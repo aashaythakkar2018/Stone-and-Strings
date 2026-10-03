@@ -1,0 +1,37 @@
+{
+  "$description": "Stone & Strings design tokens — from SS_Brandkit (colour p.13–14, type p.9–11) and the approved prototypes.",
+  "color": {
+    "brand": {
+      "rust":       { "value": "#a3412c", "rgb": "163,65,44",  "cmyk": "25,84,91,18", "use": "Primary — wordmark, CTAs, price" },
+      "peach":      { "value": "#be6754", "rgb": "190,103,84", "cmyk": "21,68,68,6",  "use": "Eyebrows, secondary accent" },
+      "cream":      { "value": "#dec4ad", "rgb": "222,196,173","cmyk": "13,22,31,0",  "use": "Logo on dark, warm neutral" },
+      "sand":       { "value": "#ffd5b0", "rgb": "255,213,176","cmyk": "0,18,31,0",   "use": "Highlights on dark sections" },
+      "olive":      { "value": "#40462c", "rgb": "64,70,44",   "cmyk": "65,51,82,49", "use": "Dark sections" },
+      "sage":       { "value": "#89965e", "rgb": "137,150,94", "cmyk": "49,28,75,6",  "use": "Intention tags, trust dots" }
+    },
+    "ui": {
+      "rust-deep": { "value": "#7d2f1f" },
+      "paper":     { "value": "#f6efe6" },
+      "paper-2":   { "value": "#efe5d7" },
+      "ink":       { "value": "#2b2622" },
+      "ink-soft":  { "value": "#5c534a" },
+      "line":      { "value": "#e2d3c1" },
+      "natural":   { "value": "#5f7138", "use": "'Natural' badge — keep paired with 'disclosed'" },
+      "disclosed": { "value": "#9a6a2f", "use": "'Dyed · disclosed' badge" }
+    },
+    "gradient": {
+      "rust":  "linear-gradient(160deg, #a3412c, #be6754)",
+      "olive": "linear-gradient(160deg, #40462c, #89965e)",
+      "sand":  "linear-gradient(160deg, #ffd5b0, #dec4ad)"
+    }
+  },
+  "font": {
+    "display": { "family": "Hollen", "fallback": "Cormorant Garamond, Georgia, serif", "use": "Headlines, sentence case (licensed — web font not supplied)" },
+    "heading": { "family": "Cormorant Garamond", "weights": [400, 500, 600], "use": "Web stand-in for Hollen (approved prototypes)" },
+    "body":    { "family": "Helvetica Neue, Helvetica, Arial, sans-serif", "use": "Subheads: Medium · Body: Light/Regular" },
+    "script":  { "family": "Pinyon Script", "use": "Affirmations & signatures only" }
+  },
+  "radius": { "sm": "2px", "md": "3px", "lg": "4px", "pill": "20px" },
+  "layout": { "container": "1240px", "content": "820px", "gutter": "32px (20px ≤520px)" },
+  "motion": { "ease": "cubic-bezier(.22,.61,.36,1)", "duration": "350ms" }
+}

@@ -1,0 +1,19 @@
+.mmenu .drawer__panel { width: min(400px, 92vw); }
+.mmenu__logo { height: 38px; width: auto; color: var(--rust); display: block; }
+.mmenu__search {
+  width: 100%; display: flex; align-items: center; gap: 10px; margin: 16px 0 8px; padding: 13px 14px;
+  border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--paper-2);
+  font-size: 14px; color: var(--ink-soft); text-align: left;
+}
+.mmenu__search svg { width: 18px; height: 18px; }
+.mmenu__group .acc__btn { font-family: var(--font-heading); font-size: 24px; font-weight: 500; padding: 16px 0; }
+.mmenu__sub { list-style: none; margin: 0; padding: 0 0 6px; }
+.mmenu__sub a { display: block; padding: 8px 0 8px 14px; border-left: 1px solid var(--cream); font-size: 15px; color: var(--ink); }
+.mmenu__sub a:hover { color: var(--rust); border-color: var(--rust); }
+.mmenu__link {
+  display: block; font-family: var(--font-heading); font-size: 24px; padding: 14px 0; border-bottom: 1px solid var(--line);
+}
+.mmenu__link.active { color: var(--rust); }
+.mmenu__tag { font-size: 30px; color: var(--peach); text-align: center; margin-top: 36px; }
+.mmenu__foot { display: flex; justify-content: space-between; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; }
+.mmenu__foot a:hover { color: var(--rust); }

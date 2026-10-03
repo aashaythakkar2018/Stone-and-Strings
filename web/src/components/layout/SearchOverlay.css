@@ -1,0 +1,33 @@
+.sov { max-width: 880px; margin: 0 auto; padding-top: 28px; }
+.sov__form { position: relative; border-bottom: 1px solid var(--ink); }
+.sov__icon { position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 24px; height: 24px; color: var(--ink-soft); }
+.sov__input {
+  width: 100%; border: none; background: transparent; padding: 14px 0 14px 38px;
+  font-family: var(--font-heading); font-size: clamp(24px, 3.4vw, 36px); color: var(--ink);
+}
+.sov__input:focus { outline: none; }
+.sov__input::-webkit-search-cancel-button { cursor: pointer; }
+.sov__popular { margin-top: 28px; }
+.sov__chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.sov__results { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; margin-top: 30px; }
+.sov__results ul { list-style: none; margin: 14px 0 0; padding: 0; }
+.sov__sugg a { display: flex; justify-content: space-between; align-items: baseline; padding: 7px 0; font-family: var(--font-heading); font-size: 20px; }
+.sov__sugg a:hover { color: var(--rust); }
+.sov__sugg small { font-family: var(--font-body); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
+.sov__prods { grid-column: 2; }
+.sov__sugg + .sov__prods { grid-column: auto; }
+.sov__results:not(:has(.sov__sugg)) .sov__prods { grid-column: 1 / -1; }
+.sov__item { display: grid; grid-template-columns: 64px 1fr auto; gap: 16px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.sov__item:hover .sov__title { color: var(--rust); }
+.sov__thumb { position: relative; width: 64px; height: 64px; border-radius: var(--radius); }
+.sov__meta { display: flex; flex-direction: column; }
+.sov__title { font-family: var(--font-heading); font-size: 20px; transition: color .25s; }
+.sov__stones { font-size: 12px; color: var(--ink-soft); }
+.sov__price { font-family: var(--font-heading); font-size: 18px; color: var(--rust); }
+.sov__empty { margin-top: 14px; color: var(--ink-soft); font-size: 15px; }
+.sov__empty .inline-link { background: none; border-top: 0; border-left: 0; border-right: 0; padding: 0; font: inherit; color: var(--rust); }
+.sov__all { margin-top: 22px; }
+@media (max-width: 760px) {
+  .sov__results { grid-template-columns: 1fr; gap: 28px; }
+  .sov__prods, .sov__sugg + .sov__prods { grid-column: auto; }
+}

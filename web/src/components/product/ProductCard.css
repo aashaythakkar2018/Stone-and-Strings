@@ -1,0 +1,28 @@
+.card { display: block; }
+.card__thumb { aspect-ratio: 1 / 1; border-radius: var(--radius); overflow: hidden; position: relative; margin-bottom: 16px; }
+.card__img { position: absolute; inset: 0; width: 100%; height: 100%; transition: transform .6s var(--ease), opacity .5s var(--ease); }
+.card__img--alt { opacity: 0; }
+.card:hover .card__img { transform: scale(1.04); }
+@media (hover: hover) {
+  .card:hover .card__img--alt { opacity: 1; }
+}
+.card__sale { position: absolute; top: 12px; right: 12px; z-index: 3; }
+.card__title { font-size: 21px; margin-bottom: 3px; transition: color .3s; }
+.card:hover .card__title { color: var(--rust); }
+.card__stones { font-size: 12px; color: var(--ink-soft); margin-bottom: 8px; }
+.card__row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card__price { font-family: var(--font-heading); font-size: 20px; color: var(--rust); }
+.card__price .price__compare { font-size: 15px; color: var(--ink-soft); margin-left: 4px; }
+.card__intent { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--sage-text); font-weight: 600; }
+.price--pending { font-family: var(--font-body); font-size: 12px; letter-spacing: .06em; color: var(--ink-soft); font-style: italic; }
+.card.is-unavailable .card__img { filter: saturate(.75); }
+
+.pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px 24px; }
+.pgrid--4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1080px) { .pgrid--4 { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 860px) { .pgrid, .pgrid--4 { grid-template-columns: repeat(2, 1fr); gap: 28px 16px; } .card__title { font-size: 19px; } }
+@media (max-width: 359px) { .pgrid, .pgrid--4 { grid-template-columns: 1fr; } }
+
+/* skeleton card */
+.card-skel .skeleton:first-child { aspect-ratio: 1 / 1; margin-bottom: 16px; }
+.card-skel .skeleton + .skeleton { height: 14px; margin-top: 8px; }
