@@ -44,7 +44,7 @@ export function ProductInfo({ product }: { product: Product }) {
           value={selected[opt.name] ?? ''}
           onChange={(e) => setSelected((s) => ({ ...s, [opt.name]: e.target.value }))}
           options={opt.values.map((v) => ({ value: v, label: v }))}
-          hint={opt.name === 'Wrist size' ? <a href="#sizing" className="inline-link">How to measure</a> : undefined}
+          hint={opt.name === 'Wrist size' ? <button type="button" className="inline-link link-btn" onClick={() => document.getElementById('sizing')?.scrollIntoView({ behavior: 'smooth' })}>How to measure</button> : undefined}
           disabled={!purchasable}
         />
       ))}

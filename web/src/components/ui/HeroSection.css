@@ -1,0 +1,90 @@
+/* Split hero — layout from hero-section-2, expressed in the Stone & Strings token system. */
+.hero2 {
+  position: relative; display: flex; width: 100%; overflow: hidden;
+  min-height: min(86vh, 820px); background: var(--paper); color: var(--ink);
+}
+
+/* ── Left: content (lg 60% · md 50%) ── */
+.hero2__content {
+  display: flex; flex-direction: column; justify-content: space-between; gap: 48px;
+  width: 60%; padding: clamp(40px, 4vw, 56px) clamp(32px, 5vw, 72px);
+}
+.hero2__brand { display: flex; align-items: center; gap: 14px; margin-bottom: clamp(32px, 4vw, 44px); }
+.hero2__mark { height: 40px; width: auto; color: var(--rust); flex: none; }
+.hero2__brand-text { font-family: var(--font-heading); font-size: 21px; font-weight: 600; letter-spacing: .04em; line-height: 1.1; color: var(--ink); }
+.hero2__slogan { margin-top: 3px; font-size: 11px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--ink-soft); }
+
+.hero2__title { font-size: clamp(40px, 5vw, 72px); line-height: 1.04; letter-spacing: .005em; text-wrap: balance; max-width: 16ch; }
+.hero2__title em { font-style: italic; color: var(--rust); }
+.hero2__rule { width: 72px; height: 2px; background: var(--rust); margin: 24px 0; }
+.hero2__subtitle { max-width: 44ch; font-size: var(--text-lg); color: var(--ink-soft); }
+
+.hero2__actions { display: flex; flex-wrap: wrap; align-items: baseline; gap: 14px 32px; margin-top: 28px; }
+.hero2__cta {
+  display: inline-flex; align-items: center; gap: 10px; padding: 10px 0 6px;
+  font-size: 13px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--rust);
+  border-bottom: 1px solid currentColor; transition: color var(--dur) var(--ease), gap var(--dur) var(--ease);
+}
+.hero2__cta:hover { color: var(--rust-deep); gap: 14px; }
+.hero2__cta--secondary { color: var(--ink); border-bottom-color: var(--line); }
+.hero2__cta--secondary:hover { color: var(--rust); border-bottom-color: var(--rust); }
+
+.hero2__info ul {
+  list-style: none; margin: 0; padding: 22px 0 0; border-top: 1px solid var(--line);
+  display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 14px 36px;
+}
+.hero2__info li { display: flex; align-items: center; gap: 9px; font-size: 12.5px; color: var(--ink-soft); letter-spacing: .02em; }
+.hero2__info a { transition: color .25s; }
+.hero2__info a:hover { color: var(--rust); }
+.hero2__info-icon { width: 18px; height: 18px; color: var(--rust); flex: none; }
+
+/* ── Right: panel with the diagonal clip-path (lg 40% · md 50%) ── */
+.hero2__panel {
+  position: relative; width: 40%; min-height: 300px; isolation: isolate; overflow: hidden;
+  background: radial-gradient(120% 120% at 70% 20%, #b9543b, var(--rust) 55%, var(--rust-deep));
+  clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+  animation: hero2Wipe 1.2s cubic-bezier(0, .55, .45, 1) both;
+}
+.hero2__texture {
+  position: absolute; inset: -6%; z-index: 0; background-size: cover; background-position: center;
+  mix-blend-mode: multiply; opacity: .55; animation: hero2Drift 24s ease-in-out infinite alternate;
+}
+.hero2__script {
+  position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; justify-content: center;
+  padding: 24px 24px 24px 20%; text-align: center; color: var(--paper);
+}
+.hero2__script .script { font-size: clamp(28px, 2.7vw, 44px); line-height: 1.1; white-space: nowrap; }
+.hero2__tag {
+  position: absolute; right: 24px; bottom: 24px; z-index: 3; background: var(--paper); padding: 9px 16px;
+  border-radius: var(--radius-sm); font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--rust);
+}
+
+/* ── Entrance: staggered fade-up (container stagger .15s, delay .2s, .5s ease-out) ── */
+.hero2__item { animation: hero2Up .5s ease-out both; animation-delay: calc(.2s + var(--i, 0) * .15s); }
+
+@keyframes hero2Up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+@keyframes hero2Wipe { from { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); } to { clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%); } }
+@keyframes hero2WipeY { from { clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%); } to { clip-path: polygon(0 14%, 100% 0, 100% 100%, 0 100%); } }
+@keyframes hero2Drift { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(-2%, 1.5%, 0) scale(1.03); } }
+
+/* ── md: 50 / 50 ── */
+@media (max-width: 1080px) {
+  .hero2__content, .hero2__panel { width: 50%; }
+  .hero2__info ul { grid-template-columns: 1fr; gap: 12px; }
+}
+
+/* ── mobile: stacked, content first; the diagonal turns horizontal so it reads across a full-width panel ── */
+@media (max-width: 767px) {
+  .hero2 { flex-direction: column; min-height: 0; }
+  .hero2__content { width: 100%; padding: 36px var(--gutter) 40px; gap: 36px; }
+  .hero2__brand { margin-bottom: 32px; }
+  .hero2__mark { height: 34px; }
+  .hero2__title { max-width: none; }
+  .hero2__panel {
+    width: 100%; min-height: 320px;
+    clip-path: polygon(0 14%, 100% 0, 100% 100%, 0 100%); animation-name: hero2WipeY;
+  }
+  .hero2__script { padding: 64px 24px 24px; }
+  .hero2__script .script { font-size: clamp(28px, 8.4vw, 40px); }
+  .hero2__tag { left: var(--gutter); right: auto; }
+}

@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { createBrowserRouter, Navigate, RouterProvider, useParams } from 'react-router-dom';
+import { createBrowserRouter, createMemoryRouter, Navigate, RouterProvider, useParams } from 'react-router-dom';
 import { CartProvider } from '@/context/CartContext';
 import { Layout } from '@/components/layout/Layout';
 import Home from '@/pages/Home';
@@ -18,7 +18,11 @@ const InfoPage = lazy(() => import('@/pages/InfoPage'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 
 /** URLs mirror Shopify's (/collections, /products, /pages, /policies) so links survive the migration. */
-const router = createBrowserRouter([
+// The hosted preview (npm run build:preview) runs inside a sandboxed frame that doesn't keep
+// path-style URLs, so it routes in memory; real deploys use normal browser URLs.
+const createRouter = import.meta.env.VITE_ROUTER === 'memory' ? createMemoryRouter : createBrowserRouter;
+
+const router = createRouter([
   {
     element: <Layout />,
     children: [

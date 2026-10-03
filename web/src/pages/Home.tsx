@@ -1,7 +1,7 @@
 import { useSeo } from '@/hooks/useSeo';
 import { site } from '@/data/site';
 import { Hero } from '@/components/sections/Hero';
-import { CategoryGrid } from '@/components/sections/CategoryGrid';
+import { IntentionGallery } from '@/components/sections/CategoryGrid';
 import { BrandStory, FeaturedProducts, Pledge, PromotionalBanner, StonesTeaser, Testimonials } from '@/components/sections/HomeSections';
 import { Newsletter } from '@/components/sections/Newsletter';
 
@@ -31,7 +31,7 @@ export default function Home() {
             <h2 id="h-intentions">Shop by intention</h2>
             <p>Not by trend, not by price — by the feeling you're reaching for. Every bracelet lives in one of five quiet places.</p>
           </div>
-          <CategoryGrid />
+          <IntentionGallery />
         </div>
       </section>
       <Pledge />

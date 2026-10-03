@@ -5,6 +5,8 @@ import { Pledge } from '@/components/sections/HomeSections';
 import { Button } from '@/components/ui/Button';
 import { SmartImage } from '@/components/ui/SmartImage';
 import { Logo } from '@/components/brand/Logo';
+import packagingBox from '@/assets/images/packaging-box.webp';
+import packagingBag from '@/assets/images/packaging-bag.webp';
 import './pages.css';
 
 const crumbs = [{ label: 'Home', to: '/' }, { label: 'Meet Vidhi', to: '/pages/about' }];
@@ -78,7 +80,7 @@ export default function About() {
       <section className="sec packaging" aria-labelledby="h-pack">
         <div className="wrap packaging__grid">
           <figure className="packaging__img packaging__img--a">
-            <img src="/images/packaging-box.webp" alt="Rust Stone & Strings gift box with an embossed bead pattern and a cream wordmark card" loading="lazy" decoding="async" />
+            <img src={packagingBox} alt="Rust Stone & Strings gift box with an embossed bead pattern and a cream wordmark card" loading="lazy" decoding="async" />
           </figure>
           <div className="packaging__copy">
             <p className="eyebrow">Arrives ready to give</p>
@@ -90,7 +92,7 @@ export default function About() {
             <Button to="/collections/all" variant="ghost">Shop the collection</Button>
           </div>
           <figure className="packaging__img packaging__img--b">
-            <img src="/images/packaging-bag.webp" alt="Cream Stone & Strings carry bag with rust ribbon and small wrapped gift boxes" loading="lazy" decoding="async" />
+            <img src={packagingBag} alt="Cream Stone & Strings carry bag with rust ribbon and small wrapped gift boxes" loading="lazy" decoding="async" />
           </figure>
         </div>
       </section>

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { intentions } from '@/data/intentions';
 import { countCollectionProducts } from '@/data/catalog';
 import type { IntentionHandle } from '@/types/product';
+import { HoverExpandGallery } from '@/components/ui/HoverExpandGallery';
 import './sections.css';
 
 interface CategoryGridProps {
@@ -12,7 +13,26 @@ interface CategoryGridProps {
   headingLevel?: 'h2' | 'h3';
 }
 
-/** Shop-by-intention tiles (home-intentions / collection-cross-links). */
+/** home-intentions — all five intentions as a hover-expand gallery. */
+export function IntentionGallery() {
+  return (
+    <HoverExpandGallery
+      items={intentions.map((i) => {
+        const n = countCollectionProducts(i.handle);
+        return {
+          title: i.title,
+          description: i.short,
+          meta: `${n} ${n === 1 ? 'piece' : 'pieces'}`,
+          accent: i.gradient,
+          to: `/collections/${i.handle}`,
+          cta: 'Shop the line',
+        };
+      })}
+    />
+  );
+}
+
+/** Shop-by-intention tiles (collection-cross-links). */
 export function CategoryGrid({ exclude, meta = 'count', headingLevel: H = 'h3' }: CategoryGridProps) {
   const list = intentions.filter((i) => i.handle !== exclude);
   return (

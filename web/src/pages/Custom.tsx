@@ -50,7 +50,7 @@ export default function Custom() {
             </p>
             <div className="chero__cta">
               <Button to="/pages/contact?topic=custom">Start your custom piece</Button>
-              <Button href="#lines" variant="ghost">See the three lines</Button>
+              <Button variant="ghost" onClick={() => document.getElementById('lines')?.scrollIntoView({ behavior: 'smooth' })}>See the three lines</Button>
             </div>
             <ul className="trust-items chero__trust" role="list">
               <li className="t-item"><span className="dot" aria-hidden="true" />Designed with you before it's made</li>

@@ -1,0 +1,94 @@
+/* Hover-expand gallery — mechanics from 21st.dev hover-expand-gallery, expressed in the Stone & Strings tokens. */
+.hx {
+  --hx-ease: cubic-bezier(.32, .72, 0, 1);
+  display: flex; justify-content: center; height: var(--hx-h);
+  list-style: none; margin: 0; padding: 0;
+}
+
+/* Desktop: flex-basis is what animates, rail width → open width. */
+.hx__item {
+  flex: 0 1 var(--hx-rail); min-width: 0; height: 100%;
+  border-left: 1px solid var(--line);
+  transition: flex-basis var(--hx-t) var(--hx-ease);
+}
+.hx__item:last-child { border-right: 1px solid var(--line); }
+.hx__item.is-open { flex-basis: var(--hx-max); }
+
+.hx__panel { position: relative; display: block; height: 100%; overflow: hidden; color: var(--ink); }
+.hx__panel:focus-visible { outline-offset: -3px; }
+
+/* Reveal wrappers only do work in the mobile accordion; on desktop they drop out of layout. */
+.hx__reveal, .hx__reveal-in { display: contents; }
+
+/* Art: pinned beside the rail; the panel's width animates under it. */
+.hx__art {
+  position: absolute; top: 10px; bottom: 10px; left: var(--hx-rail); right: 12px;
+  border-radius: var(--radius); overflow: hidden; opacity: 0;
+  transition: opacity var(--hx-t) var(--hx-ease);
+}
+.hx__art img { width: 100%; height: 100%; object-fit: cover; max-width: none; }
+/* Readability scrim + the bead-grain texture used on the old intention tiles. */
+.hx__art::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, transparent 35%, rgba(43, 38, 34, .72)); }
+.hx__art::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; opacity: .06;
+  background-image: radial-gradient(circle at 1px 1px, #000 1px, transparent 0); background-size: 6px 6px;
+}
+.is-open .hx__art { opacity: 1; }
+
+/* Rail: title rotated up the left edge, index at the top. */
+.hx__rail {
+  position: absolute; inset: 0 auto 0 0; width: var(--hx-rail);
+  display: flex; flex-direction: column-reverse; justify-content: space-between; align-items: center;
+  padding: 24px 0; color: var(--ink-soft); transition: color var(--hx-t) ease-out, background-color .3s ease-out;
+}
+.hx__rail-title, .hx__rail-num { writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; }
+.hx__rail-title { font-family: var(--font-heading); font-size: 22px; letter-spacing: .02em; overflow: hidden; }
+.hx__rail-num { font-size: var(--text-xs); font-weight: 600; letter-spacing: var(--tracking-eyebrow); font-variant-numeric: tabular-nums; }
+.hx__item:not(.is-open) .hx__panel:hover .hx__rail { color: var(--rust); background: var(--paper-2); }
+.is-open .hx__rail { color: var(--ink); }
+.is-open .hx__rail-num { color: var(--rust); }
+
+/* Copy: fixed width so it never reflows while the panel animates. */
+.hx__copy {
+  position: absolute; z-index: 2; left: calc(var(--hx-rail) + 32px); bottom: 40px;
+  width: calc(var(--hx-max) - var(--hx-rail) - 90px);
+  display: flex; flex-direction: column; align-items: flex-start; gap: 10px; color: var(--paper);
+  opacity: 0; transform: translateY(10px);
+  transition: opacity calc(var(--hx-t) * .6) ease-out, transform calc(var(--hx-t) * .6) var(--hx-ease);
+}
+.is-open .hx__copy { opacity: 1; transform: none; transition-delay: calc(var(--hx-t) * .35); }
+.hx__meta { font-size: var(--text-xs); font-weight: 600; letter-spacing: .16em; text-transform: uppercase; opacity: .85; }
+.hx__title { font-size: clamp(32px, 3.2vw, 44px); line-height: 1.02; color: var(--paper); text-wrap: balance; }
+.hx__desc { max-width: 34ch; font-size: 15px; line-height: 1.5; color: color-mix(in srgb, var(--paper) 88%, transparent); }
+.hx__cta {
+  display: inline-flex; align-items: center; gap: 10px; margin-top: 8px; padding: 6px 0 4px;
+  font-size: 12px; font-weight: 600; letter-spacing: var(--tracking-button); text-transform: uppercase;
+  color: var(--sand); border-bottom: 1px solid currentColor; transition: gap var(--dur) var(--ease);
+}
+.hx__panel:hover .hx__cta { gap: 14px; }
+.hx__panel:focus-visible { outline-color: var(--rust); }
+
+/* Below 1024px: vertical accordion — the art block's height animates instead. */
+@media (max-width: 1023px) {
+  .hx { flex-direction: column; height: auto; border-top: 1px solid var(--line); }
+  .hx__item, .hx__item.is-open { flex: none; height: auto; border: 0; border-bottom: 1px solid var(--line); }
+  .hx__item:last-child { border-right: 0; }
+  .hx__panel { display: flex; flex-direction: column; }
+  .hx__rail {
+    position: static; order: -1; width: 100%; height: 64px; padding: 0 4px;
+    flex-direction: row; justify-content: space-between;
+  }
+  .hx__rail-title, .hx__rail-num { writing-mode: horizontal-tb; transform: none; }
+  .hx__rail-title { font-size: 21px; text-overflow: ellipsis; }
+  /* Accordion reveal: grid rows 0fr → 1fr instead of animating height. */
+  .hx__reveal { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--hx-t) var(--hx-ease); }
+  .is-open .hx__reveal { grid-template-rows: 1fr; }
+  .hx__reveal-in { display: block; min-height: 0; overflow: hidden; }
+  .hx__art { position: relative; inset: auto; display: block; height: var(--hx-img); margin-bottom: 14px; }
+  .hx__copy { left: 22px; right: 22px; bottom: 38px; width: auto; }
+  .hx__title { font-size: 30px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hx__item, .hx__art, .hx__copy, .hx__rail, .hx__reveal { transition: none; }
+}

@@ -1,32 +1,38 @@
-import { Button } from '@/components/ui/Button';
-import './sections.css';
+import { HeroSection } from '@/components/ui/HeroSection';
+import { site } from '@/data/site';
+import windowShadow from '@/assets/images/window-shadow.webp';
 
 /**
- * home-hero — the only H1 on the homepage. The visual reproduces the brand-kit cover:
- * rust field with the window-light shadow overlay (extracted from the kit).
+ * home-hero — the only H1 on the homepage. Split layout (HeroSection) with the brand-kit
+ * cover treatment on the panel: rust field + window-light shadow. Copy is the approved
+ * prototype's; the info row uses only confirmed facts (no phone/street address exists yet).
  */
 export function Hero() {
   return (
-    <section className="hero" data-ss-section="home-hero" aria-label="Introduction">
-      <div className="hero__copy">
-        <p className="eyebrow">Handmade · small-batch · strung to order</p>
-        <h1>Handmade gemstone bracelets, <em>worn for meaning</em></h1>
-        <p className="hero__lede">
-          Strung one at a time in a small Georgia studio — chosen for the moment you're in, and labelled with the
-          honest truth of every material inside. This is jewellery you understand before you wear it.
-        </p>
-        <div className="hero__cta">
-          <Button to="/collections/all">Shop by intention</Button>
-          <Button to="/pages/custom" variant="ghost">Design a custom piece</Button>
-        </div>
-      </div>
-      <div className="hero__visual" role="img" aria-label="Warm window light falling across a rust-toned surface — Stone & Strings">
-        <div className="hero__shadow" aria-hidden="true" />
-        <div className="hero__script" aria-hidden="true">
-          <span className="script">made for the way<br />you move through the day</span>
-        </div>
-        <span className="hero__tag">Vidhi's hands · natural light</span>
-      </div>
-    </section>
+    <HeroSection
+      data-ss-section="home-hero"
+      aria-label="Introduction"
+      brand={{ text: site.name }}
+      slogan={site.tagline}
+      title={<>Handmade gemstone bracelets, <em>worn for meaning</em></>}
+      subtitle="Strung one at a time in a small Georgia studio — chosen for the moment you're in, and labelled with the honest truth of every material inside. This is jewellery you understand before you wear it."
+      callToAction={{ text: 'Shop by intention', to: '/collections/all' }}
+      secondaryAction={{ text: 'Design a custom piece', to: '/pages/custom' }}
+      backgroundImage={windowShadow}
+      imageAlt="Warm window light falling across a rust-toned surface"
+      panel={
+        <>
+          <div className="hero2__script" aria-hidden="true">
+            <span className="script">made for the way<br />you move through the day</span>
+          </div>
+          <span className="hero2__tag">Vidhi's hands · natural light</span>
+        </>
+      }
+      info={[
+        { type: 'website', label: site.url.replace(/^https?:\/\//, '') },
+        { type: 'instagram', label: site.instagramHandle, href: site.instagram },
+        { type: 'location', label: `Handmade in ${site.location}` },
+      ]}
+    />
   );
 }
