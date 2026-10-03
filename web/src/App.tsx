@@ -20,7 +20,10 @@ const NotFound = lazy(() => import('@/pages/NotFound'));
 /** URLs mirror Shopify's (/collections, /products, /pages, /policies) so links survive the migration. */
 // The hosted preview (npm run build:preview) runs inside a sandboxed frame that doesn't keep
 // path-style URLs, so it routes in memory; real deploys use normal browser URLs.
-const createRouter = import.meta.env.VITE_ROUTER === 'memory' ? createMemoryRouter : createBrowserRouter;
+const isMemory = import.meta.env.VITE_ROUTER === 'memory';
+const createRouter = isMemory ? createMemoryRouter : createBrowserRouter;
+// Browser deploys served from a sub-path (GitHub Pages: /Stone-and-Strings/) route under it.
+const basename = isMemory ? undefined : import.meta.env.BASE_URL.replace(/\/$/, '') || '/';
 
 const router = createRouter([
   {
@@ -52,7 +55,7 @@ const router = createRouter([
       { path: '*', element: <NotFound /> },
     ],
   },
-]);
+], { basename });
 
 function PolicyRoute() {
   const { slug = '' } = useParams();

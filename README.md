@@ -2,9 +2,9 @@
 
 Handmade gemstone bracelets, worn for meaning. Storefront, brand assets and design prototypes.
 
-**▶ Live preview: [Stone & Strings Storefront](https://claude.ai/artifact/B5XCoeA7iFPsN37UaUEAhw)**
+**▶ Live site: https://aashaythakkar2018.github.io/Stone-and-Strings/**
 
-The preview is a private link; the owner shares it from the page's Share menu.
+Deployed automatically to GitHub Pages on every push to `main` ([workflow](.github/workflows/pages.yml)).
 
 ## What's here
 
@@ -23,11 +23,6 @@ npm install
 npm run dev
 ```
 
-## Update the live preview
+## Update the live site
 
-```bash
-cd web
-npm run build:preview   # → dist-preview/preview-page.html + assets/
-```
-
-Then republish `dist-preview/` to the preview link above.
+Push to `main`. The GitHub Actions workflow builds `web/` and redeploys the site.
