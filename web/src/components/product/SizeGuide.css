@@ -1,0 +1,6 @@
+.sizeguide__lede { margin-top: 10px; color: var(--ink-soft); }
+.sizeguide__table { width: 100%; border-collapse: collapse; margin-top: 18px; font-size: 14px; font-variant-numeric: tabular-nums; }
+.sizeguide__table th, .sizeguide__table td { text-align: left; padding: 11px 8px; border-bottom: 1px solid var(--line); }
+.sizeguide__table thead th { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
+.sizeguide__table tbody th { font-weight: 600; }
+.sizeguide__note { margin-top: 16px; font-size: 13px; color: var(--ink-soft); }

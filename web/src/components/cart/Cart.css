@@ -48,3 +48,12 @@
   border: 1px solid var(--line); border-radius: var(--radius-pill); color: var(--ink-soft); transition: all .25s;
 }
 .cempty__links a:hover { border-color: var(--rust); color: var(--rust); }
+
+/* free-shipping progress (Homepage V2 #9) */
+.shipbar { margin: -8px -24px 0; padding: 16px 24px; background: #fff; border-bottom: 1px solid var(--line); }
+.shipbar__msg { font-size: 14px; font-weight: 500; }
+.shipbar__track { height: 6px; margin-top: 10px; background: var(--paper-2); overflow: hidden; }
+.shipbar__fill { display: block; height: 100%; background: var(--olive); transform-origin: left; transition: transform .5s var(--ease); }
+.cdrawer__note { font-size: 12px; color: var(--ink-soft); text-align: center; margin: 10px 0 0; }
+.cdrawer__stack { margin-top: 20px; color: var(--ink-soft); font-size: 14px; }
+.citem__body { min-width: 0; }

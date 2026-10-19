@@ -3,7 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { primaryNav } from '@/data/navigation';
 import { useCart } from '@/hooks/useCart';
 import { Logo } from '@/components/brand/Logo';
-import { IconBag, IconMenu, IconSearch } from '@/components/ui/Icons';
+import { IconBag, IconMenu, IconSearch, IconUser } from '@/components/ui/Icons';
 import { MegaMenu } from './MegaMenu';
 import { MobileMenu } from './MobileMenu';
 import { SearchOverlay } from './SearchOverlay';
@@ -103,9 +103,13 @@ export function Header() {
                   </li>
                 ) : (
                   <li key={item.label} className="nav__item">
-                    <NavLink to={item.to} className={({ isActive }) => `nav__link${isActive ? ' is-current' : ''}`}>
-                      {item.label}
-                    </NavLink>
+                    {item.to.includes('#') ? (
+                      <Link to={item.to} className={`nav__link${item.accent ? ' nav__link--accent' : ''}`}>{item.label}</Link>
+                    ) : (
+                      <NavLink to={item.to} className={({ isActive }) => `nav__link${item.accent ? ' nav__link--accent' : ''}${isActive ? ' is-current' : ''}`}>
+                        {item.label}
+                      </NavLink>
+                    )}
                   </li>
                 ),
               )}
@@ -116,18 +120,17 @@ export function Header() {
             <Logo className="brand__logo" title="" />
           </Link>
 
+          {/* Homepage V2 #2 — labeled icons for search, account and cart at every width */}
           <div className="util">
-            <button type="button" className="util__link util__text" onClick={() => setSearchOpen(true)}>Search</button>
-            <Link className="util__link util__text" to="/account">Account</Link>
-            <button type="button" className="util__link util__text" onClick={openCart} aria-label={cartLabel}>
-              Cart<span className={`cart-dot${bump ? ' is-bump' : ''}`} aria-hidden="true">{count}</span>
-            </button>
             <button type="button" className="icon-btn util__icon" onClick={() => setSearchOpen(true)} aria-label="Search">
               <IconSearch />
             </button>
+            <Link className="icon-btn util__icon util__account" to="/account" aria-label="Account">
+              <IconUser />
+            </Link>
             <button type="button" className="icon-btn util__icon util__bag" onClick={openCart} aria-label={cartLabel}>
               <IconBag />
-              {count > 0 && <span className={`cart-dot cart-dot--float${bump ? ' is-bump' : ''}`} aria-hidden="true">{count}</span>}
+              <span className={`cart-dot${bump ? ' is-bump' : ''}`} aria-hidden="true">{count}</span>
             </button>
           </div>
         </div>

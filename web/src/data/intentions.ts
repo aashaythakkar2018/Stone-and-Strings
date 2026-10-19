@@ -6,7 +6,7 @@ export const intentions: Intention[] = [
   {
     handle: 'calm',
     title: 'Calm & Stillness',
-    short: 'For the quiet hour, and the moments you want to slow down.',
+    short: 'For the quiet hour.',
     gradient: 'radial-gradient(120% 120% at 30% 20%, #8a97b6, #5a6685)',
   },
   {
@@ -24,7 +24,7 @@ export const intentions: Intention[] = [
   {
     handle: 'love',
     title: 'Love & Self-Worth',
-    short: 'Tender pieces, for others and for yourself.',
+    short: 'For others, and for yourself.',
     gradient: 'radial-gradient(120% 120% at 30% 20%, #d98aa0, #a85a72)',
   },
   {

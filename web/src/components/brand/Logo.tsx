@@ -9,7 +9,7 @@ interface LogoProps {
 
 /**
  * Official Stone & Strings wordmark, vector-extracted from the brand kit.
- * Colour comes from `currentColor`, so it follows the brand colour rules via CSS
+ * Color comes from `currentColor`, so it follows the brand color rules via CSS
  * (rust on light, cream on rust/olive). Never stretch, tilt or add effects (brand kit p.7).
  */
 export function Logo({ className, title = 'Stone & Strings', variant = 'wordmark' }: LogoProps) {

@@ -11,7 +11,7 @@ export const stones: Stone[] = [
     tagline: 'The stone of insight',
     gradient: 'radial-gradient(circle at 35% 30%, #8aa0c4, #41597c)',
     story:
-      'Admired in many cultures for its captivating play of colour — the blue-green flash called labradorescence — and long associated with mystery, intuition and transformation.',
+      'Admired in many cultures for its captivating play of color — the blue-green flash called labradorescence — and long associated with mystery, intuition and transformation.',
     care: 'Avoid harsh cleansers; wipe with a soft dry cloth to keep the flash bright.',
     hasCollection: true,
   },
@@ -21,9 +21,8 @@ export const stones: Stone[] = [
     tagline: 'Tenderness, softly worn',
     gradient: 'radial-gradient(circle at 35% 30%, #d98aa0, #a85a72)',
     story:
-      'Jade has been treasured for thousands of years as a stone of grace and good fortune. Pink jade reaches its soft colour through dyeing — and when it is dyed, we say so.',
+      'Jade has been treasured for thousands of years as a stone of grace and good fortune. Pink jade reaches its soft color through dyeing — and when it is dyed, we say so.',
     care: 'Dyed stones can fade with long sun exposure — store away from direct light.',
-    hasCollection: true,
   },
   {
     handle: 'amethyst',
@@ -31,7 +30,7 @@ export const stones: Stone[] = [
     tagline: 'The quiet hour',
     gradient: 'radial-gradient(circle at 35% 30%, #c9a0d6, #7d5a94)',
     story:
-      'Worn since antiquity and long linked with calm and sobriety — its name comes from the Greek amethystos. A violet quartz that has stayed a favourite for centuries.',
+      'Worn since antiquity and long linked with calm and sobriety — its name comes from the Greek amethystos. A violet quartz that has stayed a favorite for centuries.',
     care: 'Natural amethyst can pale in strong sun over time; store it in its pouch.',
     hasCollection: true,
   },
@@ -69,6 +68,7 @@ export const stones: Stone[] = [
     gradient: 'radial-gradient(circle at 35% 30%, #5a5450, #1f1b19)',
     story:
       'Long worn as a grounding stone — something people reach for on the days they need to hold steady. Most black onyx reaches its deep, even black through dyeing, including ours.',
+    hasCollection: true,
   },
   {
     handle: 'pink-opal',
@@ -77,6 +77,7 @@ export const stones: Stone[] = [
     gradient: 'radial-gradient(circle at 35% 30%, #f1c3c9, #c98b96)',
     story:
       'A gentle, milky opal from the Andes, pink opal has come to be associated with tenderness and self-kindness.',
+    hasCollection: true,
   },
   {
     handle: 'black-spinel',
@@ -93,6 +94,7 @@ export const stones: Stone[] = [
     gradient: 'radial-gradient(circle at 35% 30%, #8fd0d6, #3f8a9a)',
     story:
       'Named from the Greek for "deceit" because it was so often confused with other minerals, apatite is loved for its clear, bright blue.',
+    hasCollection: true,
   },
   {
     handle: 'peruvian-opal',

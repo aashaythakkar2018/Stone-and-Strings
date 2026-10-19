@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/Button';
 import { AddToCartButton } from './AddToCartButton';
 import { ProductPrice } from './ProductBits';
 import { MaterialsBlock } from './MaterialsBlock';
+import { useSizeGuide } from './SizeGuide';
 
 /** Buy box + founder's note, affirmation and the Materials & Craft block (PDP module order is locked). */
 export function ProductInfo({ product }: { product: Product }) {
@@ -15,6 +16,7 @@ export function ProductInfo({ product }: { product: Product }) {
   const defaultIdx = product.variants.length > 1 ? 1 : 0;
   const [selected, setSelected] = useState<Record<string, string>>(() => ({ ...product.variants[defaultIdx]?.options }));
   const [qty, setQty] = useState(1);
+  const { openSizeGuide } = useSizeGuide();
 
   const variant = useMemo(
     () => product.variants.find((v) => Object.entries(selected).every(([k, val]) => v.options[k] === val)),
@@ -44,7 +46,7 @@ export function ProductInfo({ product }: { product: Product }) {
           value={selected[opt.name] ?? ''}
           onChange={(e) => setSelected((s) => ({ ...s, [opt.name]: e.target.value }))}
           options={opt.values.map((v) => ({ value: v, label: v }))}
-          hint={opt.name === 'Wrist size' ? <button type="button" className="inline-link link-btn" onClick={() => document.getElementById('sizing')?.scrollIntoView({ behavior: 'smooth' })}>How to measure</button> : undefined}
+          hint={opt.name === 'Wrist size' ? <button type="button" className="inline-link link-btn" onClick={openSizeGuide} aria-haspopup="dialog">Find your size</button> : undefined}
           disabled={!purchasable}
         />
       ))}

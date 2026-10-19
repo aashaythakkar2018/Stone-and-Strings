@@ -12,7 +12,7 @@ export const collections: Collection[] = [
     title: 'All bracelets',
     eyebrow: 'Shop',
     description:
-      'Every piece in the studio, each hand-strung to order in Georgia and labelled with the honest truth of what it is made from. Filter by stone, intention or treatment — natural and dyed stones are always disclosed.',
+      'Every piece in the studio, each hand-strung to order in Georgia and labeled with the honest truth of what it is made from. Filter by stone, intention or treatment — natural and dyed stones are always disclosed.',
     seoTitle: 'All Handmade Gemstone Bracelets | Stone & Strings',
     seoDescription:
       'Shop every handmade gemstone bracelet from Stone & Strings — labradorite, amethyst, sunstone, pearl and more, strung to order in Georgia with every material disclosed.',
@@ -26,7 +26,7 @@ export const collections: Collection[] = [
     description: 'The newest pieces off Vidhi’s bench, most recent first.',
     seoTitle: 'New Arrivals — Handmade Gemstone Bracelets | Stone & Strings',
     seoDescription:
-      'See the newest handmade gemstone bracelets from Stone & Strings, strung to order in Georgia. Every stone, honestly labelled — shop new arrivals now.',
+      'See the newest handmade gemstone bracelets from Stone & Strings, strung to order in Georgia. Every stone, honestly labeled — shop new arrivals now.',
     tone: 'warm',
   },
   {
@@ -36,7 +36,7 @@ export const collections: Collection[] = [
     title: 'Calm & Stillness',
     eyebrow: 'By Intention',
     description:
-      'Soft violets and luminous pearl, for slowing down. Amethyst has been linked with calm since antiquity; here it sits between freshwater pearls in pieces meant for an ordinary Tuesday as much as a hard week. Every stone in this line is natural, and labelled as such.',
+      'Soft violets and luminous pearl, for slowing down. Amethyst has been linked with calm since antiquity; here it sits between freshwater pearls in pieces meant for an ordinary Tuesday as much as a hard week. Every stone in this line is natural, and labeled as such.',
     seoTitle: 'Calm & Stillness Bracelets — Amethyst & Pearl | Stone & Strings',
     seoDescription:
       'Calming gemstone bracelets in amethyst and freshwater pearl, hand-strung to order in Georgia. Natural stones, honestly disclosed — find your quiet piece.',
@@ -65,7 +65,7 @@ export const collections: Collection[] = [
       'Warm stones for stepping forward. Sunstone’s glittering shimmer has long been associated with light and open-heartedness; strung with freshwater pearl, it makes a bright piece for the days you want to be seen.',
     seoTitle: 'Confidence & Courage Bracelets — Sunstone | Stone & Strings',
     seoDescription:
-      'Confidence bracelets in warm sunstone and freshwater pearl, hand-strung to order in Georgia. Every stone honestly labelled — shop the courage line.',
+      'Confidence bracelets in warm sunstone and freshwater pearl, hand-strung to order in Georgia. Every stone honestly labeled — shop the courage line.',
     tone: 'warm',
   },
   {
@@ -101,24 +101,11 @@ export const collections: Collection[] = [
     title: 'Labradorite',
     eyebrow: 'By Stone',
     description:
-      'The stone of insight. Admired for its blue-green flash and long associated with intuition and transformation. Our labradorite is natural — cut and polished to reveal its colour, nothing more.',
+      'The stone of insight. Admired for its blue-green flash and long associated with intuition and transformation. Our labradorite is natural — cut and polished to reveal its color, nothing more.',
     seoTitle: 'Labradorite Bracelets — Natural, Handmade | Stone & Strings',
     seoDescription:
       'Handmade labradorite bracelets with natural AAA stones and sterling silver, strung to order in Georgia. Origin and treatment disclosed — shop labradorite.',
     tone: 'indigo',
-  },
-  {
-    handle: 'pink-jade',
-    kind: 'stone',
-    stone: 'pink-jade',
-    title: 'Pink Jade',
-    eyebrow: 'By Stone',
-    description:
-      'Tenderness, softly worn. Pink jade reaches its colour through dyeing — every pink jade piece we make is labelled “Dyed · disclosed”.',
-    seoTitle: 'Pink Jade Bracelets — Dyed & Disclosed | Stone & Strings',
-    seoDescription:
-      'Handmade pink jade bracelets from Stone & Strings, strung to order in Georgia. We always disclose when jade is dyed — see the pink jade pieces.',
-    tone: 'rose',
   },
   {
     handle: 'amethyst',
@@ -143,6 +130,42 @@ export const collections: Collection[] = [
     seoDescription:
       'Handmade sunstone bracelets with natural stones, strung to order in Georgia. Honest materials, fully disclosed — explore warm sunstone pieces.',
     tone: 'warm',
+  },
+  {
+    handle: 'apatite',
+    kind: 'stone',
+    stone: 'apatite',
+    title: 'Apatite',
+    eyebrow: 'By Stone',
+    description: 'A clean, bright blue. Natural apatite, strung with freshwater pearl.',
+    seoTitle: 'Apatite Bracelets — Natural, Handmade | Stone & Strings',
+    seoDescription:
+      'Handmade apatite bracelets with natural stones and freshwater pearl, strung to order in Georgia. Every material disclosed — shop apatite pieces.',
+    tone: 'sky',
+  },
+  {
+    handle: 'pink-opal',
+    kind: 'stone',
+    stone: 'pink-opal',
+    title: 'Pink Opal',
+    eyebrow: 'By Stone',
+    description: 'Soft and steady. Natural Andean pink opal, set against crisp black spinel.',
+    seoTitle: 'Pink Opal Bracelets — Natural, Handmade | Stone & Strings',
+    seoDescription:
+      'Handmade pink opal bracelets with natural stones, strung to order in Georgia. Honest materials, fully disclosed — explore pink opal pieces.',
+    tone: 'rose',
+  },
+  {
+    handle: 'black-onyx',
+    kind: 'stone',
+    stone: 'black-onyx',
+    title: 'Black Onyx',
+    eyebrow: 'By Stone',
+    description: 'Held ground. Our black onyx is dyed to an even, deep black — and labeled that way on every piece.',
+    seoTitle: 'Black Onyx Bracelets — Dyed & Disclosed | Stone & Strings',
+    seoDescription:
+      'Handmade black onyx bracelets, strung to order in Georgia. Our onyx is dyed, and we say so plainly — shop the black onyx pieces.',
+    tone: 'dusk',
   },
   {
     handle: 'pearl',

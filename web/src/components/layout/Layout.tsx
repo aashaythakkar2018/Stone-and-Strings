@@ -4,6 +4,7 @@ import { AnnouncementBar } from './AnnouncementBar';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { CartDrawer } from '@/components/cart/CartDrawer';
+import { SizeGuideProvider } from '@/components/product/SizeGuide';
 import { PageSkeleton } from '@/components/ui/PageSkeleton';
 
 function ScrollManager() {
@@ -24,7 +25,7 @@ function ScrollManager() {
 export function Layout() {
   const { pathname } = useLocation();
   return (
-    <>
+    <SizeGuideProvider>
       <ScrollManager />
       <a className="skip" href="#main">Skip to content</a>
       <AnnouncementBar />
@@ -38,6 +39,6 @@ export function Layout() {
       </main>
       <Footer />
       <CartDrawer />
-    </>
+    </SizeGuideProvider>
   );
 }

@@ -66,6 +66,9 @@ export const products: Product[] = [
     treatment: 'natural',
     materialsLine: 'AAA labradorite · AAA clear quartz · 925 sterling silver',
     tierLabel: 'Sterling silver · natural stone',
+    beadSize: '6mm beads',
+    closure: 'Lobster clasp',
+    metal: 'Sterling silver',
     materialsComplete: true,
     materials: [
       { label: 'Stones', value: 'AAA labradorite & AAA clear quartz, 6mm round beads (both)' },
@@ -81,7 +84,7 @@ export const products: Product[] = [
     stoneStory: {
       heading: 'Labradorite & clear quartz',
       body:
-        "Labradorite is admired in many cultures for its captivating play of colour, and has long been associated with mystery, intuition, and transformation. Clear quartz has been valued throughout history as a symbol of clarity and harmony, used across traditions for its beauty and significance. Paired together, they've become a combination people choose to wear as a personal reminder of clarity, trust in their own judgment, and steady personal growth. These meanings come from cultural and historical tradition, not scientific claims — we tell the story because it's part of why the stone was chosen, not as a promise of what it will do.",
+        "Labradorite is admired in many cultures for its captivating play of color, and has long been associated with mystery, intuition, and transformation. Clear quartz has been valued throughout history as a symbol of clarity and harmony, used across traditions for its beauty and significance. Paired together, they've become a combination people choose to wear as a personal reminder of clarity, trust in their own judgment, and steady personal growth. These meanings come from cultural and historical tradition, not scientific claims — we tell the story because it's part of why the stone was chosen, not as a promise of what it will do.",
     },
     faqs: [
       { question: 'Is this labradorite natural or treated?', answer: 'Both stones are natural. The labradorite is cut and polished to reveal its signature flash; the clear quartz is left untreated to keep its natural clarity.' },
@@ -109,7 +112,7 @@ export const products: Product[] = [
     available: true,
     tags: ['black onyx', 'clear quartz', 'dyed', 'strength', 'steadiness', 'grounding'],
     category: 'Bracelets',
-    collectionHandles: ['all', 'new', 'strength'],
+    collectionHandles: ['all', 'new', 'strength', 'black-onyx'],
     intention: 'strength',
     stones: ['black-onyx', 'clear-quartz'],
     treatment: 'dyed',
@@ -216,7 +219,7 @@ export const products: Product[] = [
     available: true,
     tags: ['pink opal', 'black spinel', 'opal', 'natural', 'love', 'self-worth', 'self love'],
     category: 'Bracelets',
-    collectionHandles: ['all', 'new', 'love'],
+    collectionHandles: ['all', 'new', 'love', 'pink-opal'],
     intention: 'love',
     stones: ['pink-opal', 'black-spinel'],
     treatment: 'natural',
@@ -249,7 +252,7 @@ export const products: Product[] = [
     available: true,
     tags: ['apatite', 'freshwater pearl', 'pearl', 'natural', 'clarity', 'focus', 'blue'],
     category: 'Bracelets',
-    collectionHandles: ['all', 'new', 'clarity', 'pearl'],
+    collectionHandles: ['all', 'new', 'clarity', 'apatite', 'pearl'],
     intention: 'clarity',
     stones: ['apatite', 'freshwater-pearl'],
     treatment: 'natural',

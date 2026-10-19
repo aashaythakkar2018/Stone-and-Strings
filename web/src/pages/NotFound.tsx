@@ -27,7 +27,7 @@ export default function NotFound({ kind = 'page' }: { kind?: keyof typeof COPY }
         </div>
       </section>
       <section className="wrap notfound__recs" aria-labelledby="h-404-recs">
-        <div className="sec-head sec-head--sm"><p className="eyebrow">While you're here</p><h2 id="h-404-recs">Founder favourites</h2></div>
+        <div className="sec-head sec-head--sm"><p className="eyebrow">While you're here</p><h2 id="h-404-recs">Founder favorites</h2></div>
         <ProductGrid products={getFeaturedProducts(3)} />
       </section>
     </>

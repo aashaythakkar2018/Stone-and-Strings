@@ -13,14 +13,18 @@ export const site = {
   ogImage: '/images/og-default.jpg',
   currency: 'USD',
   repairWindowDays: 30,
-  /** Free-shipping threshold is NOT confirmed (handoff §5: no shipping policy exists yet). */
   shippingNote: 'Shipping calculated at checkout',
+  /** Homepage V2 (#1, #9): free US shipping threshold — drives the cart progress bar. */
+  freeShippingThreshold: 125,
+  /** Homepage V2 make time. Bracketed = still to confirm with the studio; shown as-is until confirmed. */
+  shipsIn: '[3–5] days',
 } as const;
 
-export const announcement = [
-  { text: 'Handmade to order in Georgia, USA' },
-  { text: 'Free 30-day repair', strong: true, suffix: ' on every piece' },
-  { text: 'Each stone, honestly labelled' },
+/** Homepage V2 #1 — the bar answers shipping cost and arrival date up front. */
+export const announcement: { text: string; strong?: boolean; suffix?: string }[] = [
+  { text: 'Free US shipping over $125' },
+  { text: 'Strung to order, ships in [3–5] days', strong: true },
+  { text: 'Every stone honestly labeled' },
 ];
 
 /** Brand kit p.2 — Founder's brand statement (verbatim, punctuation tidied). */
@@ -33,17 +37,22 @@ export const mission =
 export const vision =
   'To become a trusted global jewelry brand that redefines handmade gemstone jewelry by blending authenticity, craftsmanship and storytelling — empowering individuals to wear pieces that reflect their journey, memories and uniqueness.';
 
+/** Homepage V2 #6 — four promises: the two practical answers (fit, delivery) join the trust block. */
 export const pledges = [
-  { title: 'Handmade by Vidhi', body: 'Every piece strung by one pair of hands — gemologist-trained, small-batch, never mass-produced.' },
-  { title: 'Honest materials', body: "We tell you what's natural and what's dyed or plated. On every product page, in plain words." },
-  { title: 'Made in Georgia', body: 'Strung to order in a home studio in the U.S. — and repaired free for the first 30 days.' },
+  { title: 'Handmade by Vidhi', body: 'Every piece strung by one pair of gemologist-trained hands. Small batch, never mass-produced.' },
+  { title: 'Honest materials', body: 'Natural, treated, dyed or plated: stated on every product page, in plain words.' },
+  { title: 'Sized to your wrist', body: 'Pick your size at checkout. Strung to order, ships in [3–5] days.' },
+  { title: 'Repaired free', body: 'If a strand breaks in the first 30 days, we restring it at no cost.' },
 ];
 
-/** Homepage prototype "Kind words". */
-export const testimonials = [
-  { quote: 'She told me the jade was dyed before I even asked. I’ve never had a jewellery brand be that honest — bought two more.', who: 'Priya, first order' },
-  { quote: 'The labradorite catches light exactly like she said it would. It feels made for me, because it was.', who: 'A custom piece' },
-];
+/** Homepage V2 #10 — the one real review, shown with the process proof (no empty "your words, soon" slot). */
+export const featuredReview = {
+  quote: 'She told me the jade was dyed before I even asked. I’ve never had a jewelry brand be that honest. Bought two more.',
+  who: 'Priya · verified buyer',
+};
+
+/** Homepage V2 #3 — trust row under the hero CTAs. */
+export const heroTrust = ['Natural or dyed, always disclosed', 'Sized to your wrist', 'Free 30-day repair'];
 
 export const trustPoints = [
   'Free 30-day repair on every piece',

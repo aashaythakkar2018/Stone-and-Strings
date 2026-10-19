@@ -2,10 +2,12 @@ import { Link } from 'react-router-dom';
 import { footerNav } from '@/data/navigation';
 import { site } from '@/data/site';
 import { Logo } from '@/components/brand/Logo';
+import { useSizeGuide } from '@/components/product/SizeGuide';
 import './Footer.css';
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const { openSizeGuide } = useSizeGuide();
   return (
     <footer className="foot">
       <div className="wrap foot__wrap">
@@ -25,7 +27,9 @@ export function Footer() {
               <ul>
                 {col.links.map((l) => (
                   <li key={l.label}>
-                    {l.external ? (
+                    {l.action === 'size-guide' ? (
+                      <button type="button" className="foot__btn" onClick={openSizeGuide} aria-haspopup="dialog">{l.label}</button>
+                    ) : l.external ? (
                       <a href={l.to} target="_blank" rel="noopener noreferrer">{l.label}</a>
                     ) : (
                       <Link to={l.to}>{l.label}</Link>
@@ -39,7 +43,6 @@ export function Footer() {
         <div className="foot__bot">
           <span>© {year} {site.name} · Made in {site.location}</span>
           <span className="foot__legal">
-            <Link to="/policies/shipping-policy">Shipping &amp; returns</Link>
             <Link to="/policies/privacy-policy">Privacy</Link>
             <Link to="/policies/terms-of-service">Terms</Link>
           </span>

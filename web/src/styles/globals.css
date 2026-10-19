@@ -51,8 +51,8 @@ a { text-underline-offset: .2em; }
 .skip:focus { left: 8px; top: 8px; }
 
 .eyebrow {
-  font-size: var(--text-xs); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase;
-  color: var(--peach-text); font-weight: 600; margin: 0;
+  font-family: var(--font-body); font-size: 12px; letter-spacing: .22em; text-transform: uppercase; line-height: 1.6;
+  color: var(--ink-soft); font-weight: 500; margin: 0;
 }
 .inline-link { color: var(--rust); border-bottom: 1px solid var(--cream); transition: border-color .3s; }
 .inline-link:hover { border-color: var(--rust); }
@@ -132,3 +132,6 @@ a { text-underline-offset: .2em; }
 .crumb__sep { opacity: .5; }
 .crumb [aria-current] { color: var(--ink); }
 main:focus { outline: none; }
+
+/* In-page targets (/#stack, /#shop…) land below the sticky header */
+main [id] { scroll-margin-top: calc(var(--header-h) + 16px); }

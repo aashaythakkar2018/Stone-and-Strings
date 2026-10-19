@@ -2,7 +2,7 @@ import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'reac
 import { Link } from 'react-router-dom';
 import './Button.css';
 
-type Variant = 'solid' | 'ghost' | 'cream' | 'ghost-light';
+type Variant = 'solid' | 'ink' | 'ghost' | 'cream' | 'ghost-light';
 
 interface Common {
   variant?: Variant;

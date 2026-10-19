@@ -21,7 +21,7 @@ export function Newsletter() {
     <section className="news" data-ss-section="home-newsletter" aria-labelledby="h-news">
       <div className="wrap news__wrap">
         <h2 id="h-news">First looks, and the stories behind the stones</h2>
-        <p>New pieces before anyone else, plus a short guide to the stones and how to care for them. No spam, no discount games.</p>
+        <p>New pieces before anyone else, plus our free stone and care guide. No spam, no discount games.</p>
         {state === 'done' ? (
           <p className="news__done" role="status">Thank you — you're on the list. The first stone guide is on its way once the studio opens.</p>
         ) : (
@@ -30,7 +30,7 @@ export function Newsletter() {
             <input
               id="nl-email"
               type="email"
-              placeholder="Your email"
+              placeholder="Email address"
               autoComplete="email"
               value={email}
               onChange={(e) => { setEmail(e.target.value); if (state === 'error') setState('idle'); }}
@@ -38,7 +38,7 @@ export function Newsletter() {
               aria-describedby={state === 'error' ? 'nl-err' : undefined}
               required
             />
-            <button className="btn btn--cream" type="submit">Join</button>
+            <button className="btn btn--ink" type="submit">Join</button>
             {state === 'error' && <p id="nl-err" className="news__err" role="alert">Please enter a valid email address.</p>}
           </form>
         )}

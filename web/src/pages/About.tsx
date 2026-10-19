@@ -69,7 +69,7 @@ export default function About() {
           </div>
           <div className="mv__item">
             <p className="eyebrow">Vision</p>
-            <h2>A trusted name for handmade gemstone jewellery</h2>
+            <h2>A trusted name for handmade gemstone jewelry</h2>
             <p>{vision}</p>
           </div>
         </div>

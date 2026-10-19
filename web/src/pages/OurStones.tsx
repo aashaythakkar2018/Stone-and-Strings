@@ -30,7 +30,7 @@ export default function OurStones() {
         </p>
         <div className="disclose-key">
           <span><Badge tone="natural" floating={false}>Natural</Badge> Untreated, or only cut and polished</span>
-          <span><Badge tone="disclosed" floating={false}>Dyed · disclosed</Badge> Colour enhanced — always labelled</span>
+          <span><Badge tone="disclosed" floating={false}>Dyed · disclosed</Badge> Color enhanced — always labeled</span>
         </div>
       </div>
 

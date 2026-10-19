@@ -1,6 +1,7 @@
 import type { Product } from '@/types/product';
 import { Skeleton } from '@/components/ui/Primitives';
 import { ProductCard } from './ProductCard';
+import { Stagger, StaggerItem } from '@/components/ui/Motion';
 import './ProductCard.css';
 
 interface ProductGridProps {
@@ -13,13 +14,13 @@ interface ProductGridProps {
 
 export function ProductGrid({ products, columns = 3, eagerCount = 0, headingLevel }: ProductGridProps) {
   return (
-    <ul className={`pgrid${columns === 4 ? ' pgrid--4' : ''}`} role="list" style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+    <Stagger as="ul" className={`pgrid${columns === 4 ? ' pgrid--4' : ''}`} role="list" style={{ listStyle: 'none', margin: 0, padding: 0 }}>
       {products.map((p, i) => (
-        <li key={p.id}>
+        <StaggerItem key={p.id}>
           <ProductCard product={p} eager={i < eagerCount} headingLevel={headingLevel} />
-        </li>
+        </StaggerItem>
       ))}
-    </ul>
+    </Stagger>
   );
 }
 

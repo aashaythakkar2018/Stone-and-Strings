@@ -10,7 +10,7 @@ export const siteFaqs: { group: string; items: FaqEntry[] }[] = [
     group: 'Stones & materials',
     items: [
       { question: 'How do I know if a stone is natural or treated?', answer: 'Every product page has a Materials & Craft block that names each stone, its treatment and (where confirmed) its origin. Natural stones carry a green “Natural” label; dyed, plated or coated materials carry an amber “disclosed” label.' },
-      { question: 'Why do you sell dyed stones at all?', answer: 'Some stones — black onyx and pink jade, for example — are almost always dyed to reach an even colour. We use them when they suit a design, and we always tell you.' },
+      { question: 'Why do you sell dyed stones at all?', answer: 'Some stones — black onyx and pink jade, for example — are almost always dyed to reach an even color. We use them when they suit a design, and we always tell you.' },
       { question: 'Will my piece look exactly like the photos?', answer: 'Close, but not identical. Natural gemstones vary in tone, pattern and flash from bead to bead — that variation is part of the stone, not a flaw.' },
       { question: 'Do the stones have healing properties?', answer: 'We share the cultural and historical meaning of each stone because it’s part of why it was chosen — but we make no health or scientific claims.' },
     ],
@@ -27,7 +27,7 @@ export const siteFaqs: { group: string; items: FaqEntry[] }[] = [
     items: [
       { question: 'What if my bracelet breaks?', answer: 'Every piece includes a free 30-day repair — Vidhi covers the labour, you cover any replacement materials. After 30 days, repairs are still available for a small materials-and-shipping fee.' },
       { question: 'How are custom pieces priced, and how long do they take?', answer: 'It depends on the stones, metal and details. Vidhi sends a personal quote and an estimated timeline before anything is made, so you know both before you commit.' },
-      { question: 'Where do you ship, and what does it cost?', answer: 'Shipping is calculated at checkout. Our full shipping and returns policy is being finalised and will be published before the store opens.' },
+      { question: 'Where do you ship, and what does it cost?', answer: 'Shipping is free within the US on orders over $125; below that it’s calculated at checkout. Every piece is strung to order and ships in [3–5] days. The full shipping and returns policy will be published before the store opens.' },
     ],
   },
 ];
@@ -52,7 +52,7 @@ export const infoPages: Record<string, InfoPageContent> = {
     description: 'How to care for handmade gemstone and pearl bracelets so they last: storage, cleaning, sun and water — plus stone-specific notes. Read the care guide.',
     sections: [
       { heading: 'Everyday care', body: ['Keep your bracelet dry and store it in a soft pouch when you’re not wearing it. A gentle wipe with a dry cloth keeps the surface bright.', 'Take it off before swimming, showering, workouts or heavy work — water and strain are hardest on the cord and finish.'] },
-      { heading: 'Sun and chemicals', body: ['Avoid long sun exposure: some natural stones (like amethyst) and all dyed stones can fade over time.', 'Put jewellery on last — perfume, lotion and hairspray dull pearls and polished stones.'] },
+      { heading: 'Sun and chemicals', body: ['Avoid long sun exposure: some natural stones (like amethyst) and all dyed stones can fade over time.', 'Put jewelry on last — perfume, lotion and hairspray dull pearls and polished stones.'] },
       { heading: 'Stone-by-stone notes', body: ['Each stone’s specific care note lives on the Our Stones page and on every product page.'] },
     ],
   },
@@ -74,9 +74,9 @@ export const infoPages: Record<string, InfoPageContent> = {
     title: 'Shipping & returns',
     seoTitle: 'Shipping & Returns | Stone & Strings',
     description: 'Shipping and returns information for Stone & Strings handmade gemstone bracelets, strung to order in Georgia, USA.',
-    pending: 'Our full shipping and returns policy is being finalised and will be published here before the store opens.',
+    pending: 'Our full shipping and returns policy is being finalized and will be published here before the store opens.',
     sections: [
-      { heading: 'Made to order', body: ['Every piece is strung to order in Georgia, USA, so it’s made after you order it.', 'Shipping costs are calculated at checkout.'] },
+      { heading: 'Made to order', body: ['Every piece is strung to order in Georgia, USA, and ships in [3–5] days.', 'Shipping is free within the US on orders over $125; below that it’s calculated at checkout.'] },
     ],
   },
   'privacy-policy': {

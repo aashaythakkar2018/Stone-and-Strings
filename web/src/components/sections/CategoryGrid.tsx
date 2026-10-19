@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { intentions } from '@/data/intentions';
 import { countCollectionProducts } from '@/data/catalog';
 import type { IntentionHandle } from '@/types/product';
-import { HoverExpandGallery } from '@/components/ui/HoverExpandGallery';
+import { Stagger, StaggerItem } from '@/components/ui/Motion';
 import './sections.css';
 
 interface CategoryGridProps {
@@ -13,22 +13,31 @@ interface CategoryGridProps {
   headingLevel?: 'h2' | 'h3';
 }
 
-/** home-intentions — all five intentions as a hover-expand gallery. */
-export function IntentionGallery() {
+/** Photo direction for each intention card (Homepage V2 #5). */
+const INTENTION_PHOTO: Record<string, string> = {
+  calm: 'amethyst', strength: 'black onyx', confidence: 'sunstone', love: 'pink opal', clarity: 'labradorite',
+};
+
+/**
+ * home-intentions (Homepage V2 #5) — five plain cards, no piece counts (counts advertised a thin
+ * catalog; vertical text was slow to scan and broke on mobile).
+ */
+export function IntentionCards() {
   return (
-    <HoverExpandGallery
-      items={intentions.map((i) => {
-        const n = countCollectionProducts(i.handle);
-        return {
-          title: i.title,
-          description: i.short,
-          meta: `${n} ${n === 1 ? 'piece' : 'pieces'}`,
-          accent: i.gradient,
-          to: `/collections/${i.handle}`,
-          cta: 'Shop the line',
-        };
-      })}
-    />
+    <Stagger as="ul" className="icards" role="list" gap={0.07}>
+      {intentions.map((i) => (
+        <StaggerItem key={i.handle}>
+          <Link className="icard" to={`/collections/${i.handle}`}>
+            <span className="icard__photo" style={{ background: i.gradient }} aria-hidden="true">
+              <span className="icard__note">Photo · {INTENTION_PHOTO[i.handle]}</span>
+            </span>
+            <h3 className="icard__title">{i.title}</h3>
+            <span className="icard__line">{i.short}</span>
+            <span className="icard__cta">Shop the line <span aria-hidden="true">→</span></span>
+          </Link>
+        </StaggerItem>
+      ))}
+    </Stagger>
   );
 }
 

@@ -1,9 +1,10 @@
 import { useSeo } from '@/hooks/useSeo';
 import { site } from '@/data/site';
 import { Hero } from '@/components/sections/Hero';
-import { IntentionGallery } from '@/components/sections/CategoryGrid';
-import { BrandStory, FeaturedProducts, Pledge, PromotionalBanner, StonesTeaser, Testimonials } from '@/components/sections/HomeSections';
+import { IntentionCards } from '@/components/sections/CategoryGrid';
+import { BuildYourStack, FeaturedProducts, MeetVidhi, Pledge, PromotionalBanner, StonesTeaser } from '@/components/sections/HomeSections';
 import { Newsletter } from '@/components/sections/Newsletter';
+import { Reveal } from '@/components/ui/Motion';
 
 const orgLd = [
   {
@@ -24,22 +25,22 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <section className="sec" data-ss-section="home-intentions" aria-labelledby="h-intentions">
+      <section id="shop" className="sec sec--tight sec--white" data-ss-section="home-intentions" aria-labelledby="h-intentions">
         <div className="wrap">
-          <div className="sec-head">
+          <Reveal className="sec-head">
             <p className="eyebrow">Find your piece</p>
             <h2 id="h-intentions">Shop by intention</h2>
-            <p>Not by trend, not by price — by the feeling you're reaching for. Every bracelet lives in one of five quiet places.</p>
-          </div>
-          <IntentionGallery />
+            <p>Not by trend, not by price. By the feeling you're reaching for.</p>
+          </Reveal>
+          <IntentionCards />
         </div>
       </section>
       <Pledge />
       <FeaturedProducts />
-      <BrandStory />
+      <BuildYourStack />
+      <MeetVidhi />
       <StonesTeaser />
       <PromotionalBanner />
-      <Testimonials />
       <Newsletter />
     </>
   );

@@ -47,9 +47,13 @@ export function MobileMenu({ open, onClose, onSearch }: MobileMenuProps) {
               ))}
             </div>
           ) : (
-            <NavLink key={item.label} to={item.to} className="mmenu__link" onClick={onClose}>
-              {item.label}
-            </NavLink>
+            item.to.includes('#') ? (
+              <Link key={item.label} to={item.to} className={`mmenu__link${item.accent ? ' mmenu__link--accent' : ''}`} onClick={onClose}>{item.label}</Link>
+            ) : (
+              <NavLink key={item.label} to={item.to} className="mmenu__link" onClick={onClose}>
+                {item.label}
+              </NavLink>
+            )
           ),
         )}
         <NavLink to="/pages/faq" className="mmenu__link" onClick={onClose}>FAQ</NavLink>

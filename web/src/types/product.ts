@@ -1,7 +1,7 @@
 /** The five locked intentions (handoff §3 `custom.intention`). */
 export type IntentionHandle = 'calm' | 'strength' | 'confidence' | 'love' | 'clarity';
 
-/** Drives the treatment badge colour — `custom.treatment_status` in the metafield spec. */
+/** Drives the treatment badge color — `custom.treatment_status` in the metafield spec. */
 export type TreatmentStatus = 'natural' | 'dyed' | 'plated' | 'coated';
 
 /** Brand-toned gradient used whenever a real photograph is missing or fails to load. */
@@ -72,6 +72,10 @@ export interface Product {
   treatment: TreatmentStatus;
   /** One-line materials summary under the title. */
   materialsLine: string;
+  /** Card spec line (Homepage V2 #8). Omit until the studio confirms the value. */
+  beadSize?: string;
+  closure?: string;
+  metal?: string;
   /** Short label pill next to the price (tier). */
   tierLabel?: string;
   materials?: MaterialRow[];

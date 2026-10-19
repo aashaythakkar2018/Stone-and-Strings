@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { createBrowserRouter, createMemoryRouter, Navigate, RouterProvider, useParams } from 'react-router-dom';
 import { CartProvider } from '@/context/CartContext';
+import { MotionProvider } from '@/components/ui/Motion';
 import { Layout } from '@/components/layout/Layout';
 import Home from '@/pages/Home';
 
@@ -12,6 +13,7 @@ const Cart = lazy(() => import('@/pages/Cart'));
 const About = lazy(() => import('@/pages/About'));
 const Custom = lazy(() => import('@/pages/Custom'));
 const OurStones = lazy(() => import('@/pages/OurStones'));
+const Disclosure = lazy(() => import('@/pages/Disclosure'));
 const Contact = lazy(() => import('@/pages/Contact'));
 const FAQ = lazy(() => import('@/pages/FAQ'));
 const InfoPage = lazy(() => import('@/pages/InfoPage'));
@@ -40,6 +42,7 @@ const router = createRouter([
       { path: '/pages/about', element: <About /> },
       { path: '/pages/custom', element: <Custom /> },
       { path: '/pages/our-stones', element: <OurStones /> },
+      { path: '/pages/disclosure', element: <Disclosure /> },
       { path: '/pages/contact', element: <Contact /> },
       { path: '/pages/faq', element: <FAQ /> },
       { path: '/pages/care', element: <InfoPage slug="care" /> },
@@ -64,8 +67,10 @@ function PolicyRoute() {
 
 export default function App() {
   return (
-    <CartProvider>
-      <RouterProvider router={router} />
-    </CartProvider>
+    <MotionProvider>
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
+    </MotionProvider>
   );
 }
