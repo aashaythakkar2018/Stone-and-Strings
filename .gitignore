@@ -10,3 +10,6 @@ dist/
 # local Claude Code tooling (reinstall with: npx impeccable skills install)
 .claude/*
 !.claude/launch.json
+
+# Original, unprocessed photoshoot (241 MB). The refined, web-ready copies live in web/src/assets.
+Product\ shoot\ /

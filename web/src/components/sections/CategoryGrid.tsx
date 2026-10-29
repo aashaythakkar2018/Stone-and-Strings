@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { intentions } from '@/data/intentions';
-import { countCollectionProducts } from '@/data/catalog';
+import { allProducts, countCollectionProducts } from '@/data/catalog';
 import type { IntentionHandle } from '@/types/product';
 import { Stagger, StaggerItem } from '@/components/ui/Motion';
 import './sections.css';
@@ -25,18 +25,22 @@ const INTENTION_PHOTO: Record<string, string> = {
 export function IntentionCards() {
   return (
     <Stagger as="ul" className="icards" role="list" gap={0.07}>
-      {intentions.map((i) => (
+      {intentions.map((i) => {
+        // First product in this intention that has a real photo; otherwise the brand-toned placeholder.
+        const src = allProducts.find((p) => p.intention === i.handle && p.images[0]?.src)?.images[0]?.src;
+        return (
         <StaggerItem key={i.handle}>
           <Link className="icard" to={`/collections/${i.handle}`}>
             <span className="icard__photo" style={{ background: i.gradient }} aria-hidden="true">
-              <span className="icard__note">Photo · {INTENTION_PHOTO[i.handle]}</span>
+              {src ? <img className="icard__img" src={src} alt="" loading="lazy" decoding="async" /> : <span className="icard__note">Photo · {INTENTION_PHOTO[i.handle]}</span>}
             </span>
             <h3 className="icard__title">{i.title}</h3>
             <span className="icard__line">{i.short}</span>
             <span className="icard__cta">Shop the line <span aria-hidden="true">→</span></span>
           </Link>
         </StaggerItem>
-      ))}
+        );
+      })}
     </Stagger>
   );
 }

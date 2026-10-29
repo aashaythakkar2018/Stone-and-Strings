@@ -9,6 +9,7 @@ import { primaryImage } from '@/utils/imageUtils';
 import { Button } from '@/components/ui/Button';
 import { ProductGrid } from '@/components/product/ProductGrid';
 import { SmartImage } from '@/components/ui/SmartImage';
+import { photo } from '@/data/photos';
 import { Reveal, Stagger, StaggerItem } from '@/components/ui/Motion';
 import './sections.css';
 
@@ -112,10 +113,15 @@ export function MeetVidhi() {
   return (
     <section id="vidhi" className="sec sec--tight" data-ss-section="home-founder" aria-labelledby="h-vidhi">
       <div className="wrap vidhi2">
-        {/* PRODUCTION: 15-second muted video loop of Vidhi at the bench */}
+        {/* Studio bench photo for now; V2 calls for a 15-second muted video loop of Vidhi stringing a bracelet. */}
         <SmartImage
           className="vidhi2__media"
-          image={{ tone: 'dusk', alt: 'Vidhi stringing a bracelet at her studio bench', caption: 'Video loop · Vidhi at the bench (15 sec)' }}
+          image={{
+            src: photo('editorial/bench-tools-beads'),
+            tone: 'dusk',
+            alt: 'The studio bench: a wooden bead tray with strands of sodalite, agate, hematite and rose quartz beads, a spool of thread, pliers and scissors on a white fleece',
+            caption: 'Video loop · Vidhi at the bench (15 sec)',
+          }}
         />
         <Reveal className="vidhi2__copy">
           <p className="eyebrow">The studio</p>

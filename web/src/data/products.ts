@@ -1,4 +1,5 @@
 import type { FaqEntry, Product, ProductVariant } from '@/types/product';
+import { photo } from './photos';
 
 /**
  * CATALOG — local mock data, shaped to map onto Shopify products + metafields later.
@@ -51,9 +52,9 @@ export const products: Product[] = [
     price: 118,
     currency: 'USD',
     images: [
-      { tone: 'rust', alt: 'Stone of Insight bracelet — labradorite and clear quartz beads with 925 sterling silver clasp, resting on an open hand', caption: 'Labradorite · blue flash' },
-      { tone: 'indigo', alt: 'Close-up of labradorite bead showing natural blue flash', caption: 'Labradorite · close-up' },
-      { tone: 'sand', alt: 'Bracelet worn on wrist in natural daylight', caption: 'On-wrist · daylight' },
+      { src: photo('products/stone-of-insight/01'), tone: 'rust', alt: 'Stone of Insight bracelet: a faceted labradorite stone between clear quartz beads and sterling silver, hanging against a warm brown backdrop', caption: 'Labradorite · close-up' },
+      { src: photo('products/stone-of-insight/02'), tone: 'indigo', alt: 'Stone of Insight clear quartz bracelet hanging from a chrome rod, with its sterling silver lobster clasp', caption: 'Hanging · clasp' },
+      { src: photo('products/stone-of-insight/03'), tone: 'sand', alt: 'The lower strand of the Stone of Insight bracelet: clear quartz and labradorite beads', caption: 'Lower strand' },
     ],
     options: [sizeOption],
     variants: sizeVariants('stone-of-insight-labradorite-clear-quartz-bracelet', 'SS-LABQZ-01', 118),
@@ -104,8 +105,9 @@ export const products: Product[] = [
     price: 98,
     currency: 'USD',
     images: [
-      { tone: 'dusk', alt: 'Held Ground bracelet — black onyx and clear quartz beads held in an open hand', caption: 'Black onyx · in-hand' },
-      { tone: 'olive', alt: 'Black onyx and clear quartz beads, close-up', caption: 'Onyx · close-up' },
+      { src: photo('products/held-ground/01'), tone: 'dusk', alt: 'Held Ground bracelet resting on linen: round black onyx beads and faceted clear quartz separated by silver rondelles, with tumbled quartz stones behind', caption: 'Black onyx · on linen' },
+      { src: photo('products/held-ground/02'), tone: 'olive', alt: 'Close view of the Held Ground bracelet: black onyx and faceted clear quartz beads divided by silver rondelles', caption: 'Onyx · close-up' },
+      { src: photo('products/held-ground/03'), tone: 'dusk', alt: 'Held Ground bracelet hanging from a chrome rod', caption: 'Hanging' },
     ],
     options: [sizeOption],
     variants: sizeVariants('held-ground-black-onyx-clear-quartz-bracelet', 'SS-ONYQZ-01', 98),
@@ -178,8 +180,8 @@ export const products: Product[] = [
     price: 62,
     currency: 'USD',
     images: [
-      { tone: 'sand', alt: 'Still Waters bracelet — amethyst and freshwater pearl beads in soft focus', caption: 'Amethyst · soft focus' },
-      { tone: 'violet', alt: 'Amethyst beads between freshwater pearls, close-up', caption: 'Amethyst · close-up' },
+      { src: photo('products/still-waters/01'), tone: 'sand', alt: 'Still Waters bracelet laid flat: freshwater pearls with small amethyst beads and one ornate silver bead', caption: 'Amethyst · flat lay' },
+      { src: photo('products/still-waters/02'), tone: 'violet', alt: 'Still Waters bracelet laid flat, shown from a second angle', caption: 'Second angle' },
     ],
     options: [sizeOption],
     variants: sizeVariants('still-waters-amethyst-pearl-bracelet', 'SS-AMEPL-01', 62),
@@ -211,8 +213,8 @@ export const products: Product[] = [
     price: 108,
     currency: 'USD',
     images: [
-      { tone: 'warm', alt: 'Tender Contrast bracelet — pink opal and black spinel beads worn on the wrist', caption: 'Pink opal · on-wrist' },
-      { tone: 'rose', alt: 'Pink opal and black spinel beads, close-up', caption: 'Pink opal · close-up' },
+      { src: photo('products/tender-contrast/01'), tone: 'warm', alt: 'Tender Contrast bracelet hanging: round pink opal beads with small black spinel spacers', caption: 'Pink opal · close-up' },
+      { src: photo('products/tender-contrast/02'), tone: 'rose', alt: 'Tender Contrast bracelet hanging from a chrome rod', caption: 'Hanging' },
     ],
     options: [sizeOption],
     variants: sizeVariants('tender-contrast-pink-opal-black-spinel-bracelet', 'SS-POPSP-01', 108),
@@ -244,8 +246,8 @@ export const products: Product[] = [
     price: 68,
     currency: 'USD',
     images: [
-      { tone: 'sand', alt: 'Clear Path bracelet — apatite and freshwater pearl beads', caption: 'Apatite · clean blue' },
-      { tone: 'sky', alt: 'Apatite beads, close-up', caption: 'Apatite · close-up' },
+      { src: photo('products/clear-path/01'), tone: 'sand', alt: 'Clear Path bracelet laid flat: freshwater pearls and pale blue apatite beads with one larger blue oval stone', caption: 'Apatite · flat lay' },
+      { src: photo('products/clear-path/02'), tone: 'sky', alt: 'Clear Path bracelet laid flat, shown from a second angle', caption: 'Second angle' },
     ],
     options: [sizeOption],
     variants: sizeVariants('clear-path-apatite-pearl-bracelet', 'SS-APAPL-01', 68),
@@ -278,7 +280,10 @@ export const products: Product[] = [
     price: 0,
     pricePending: true,
     currency: 'USD',
-    images: [{ tone: 'warm', alt: 'Peruvian opal and clear quartz bracelet', caption: 'Peruvian opal · coming soon' }],
+    images: [
+      { src: photo('products/peruvian-opal/01'), tone: 'warm', alt: 'Peruvian opal and clear quartz bracelet laid flat: pale aqua cube-cut opal beads between clear quartz beads, with a silver clasp', caption: 'Peruvian opal · flat lay' },
+      { src: photo('products/peruvian-opal/02'), tone: 'sky', alt: 'Peruvian opal and clear quartz bracelet laid flat, shown from a second angle', caption: 'Second angle' },
+    ],
     options: [sizeOption],
     variants: sizeVariants('peruvian-opal-clear-quartz-bracelet', 'SS-PRUQZ-01', 0, false),
     available: false,

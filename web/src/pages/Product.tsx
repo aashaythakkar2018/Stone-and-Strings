@@ -34,7 +34,9 @@ function productJsonLd(p: ProductT) {
     sku: p.variants[0]?.sku?.replace(/-[A-Z]+$/, ''),
     brand: { '@type': 'Brand', name: site.name },
     material: p.stones.map((s) => stoneByHandle.get(s)?.name ?? s),
-    ...(p.images.some((i) => i.src) ? { image: p.images.filter((i) => i.src).map((i) => i.src) } : {}),
+    ...(p.images.some((i) => i.src)
+      ? { image: p.images.filter((i) => i.src).map((i) => new URL(i.src!, window.location.href).href) }
+      : {}),
     // No aggregateRating: zero real reviews exist yet (honesty principle).
     ...(p.pricePending
       ? {}

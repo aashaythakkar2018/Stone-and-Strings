@@ -35,7 +35,7 @@ export const ProductCard = memo(function ProductCard({ product, headingLevel: H 
   const { addItem } = useCart();
   const img = primaryImage(product);
   const onSale = product.compareAtPrice != null && product.compareAtPrice > product.price;
-  const alt = product.images[1] ?? { tone: img.tone, alt: `${product.title} worn on the wrist` };
+  const alt = product.images[1];
   const quickVariant = product.variants[QUICK_ADD_INDEX] ?? product.variants[0];
   const canQuickAdd = product.available && !product.pricePending && !!quickVariant?.available;
   const spec = specLine(product);
@@ -44,7 +44,7 @@ export const ProductCard = memo(function ProductCard({ product, headingLevel: H 
     <article className={`card${product.available ? '' : ' is-unavailable'}`}>
       <div className="card__thumb">
         <SmartImage image={img} className="card__img" eager={eager} sizes="(max-width: 520px) 100vw, (max-width: 860px) 50vw, 33vw" />
-        <SmartImage image={{ ...alt, caption: 'On the wrist' }} className="card__img card__img--alt" />
+        {alt && <SmartImage image={alt} className="card__img card__img--alt" />}
         <ProductBadge product={product} />
         {onSale && <span className="card__sale"><Badge tone="sale" floating={false}>Sale</Badge></span>}
         {canQuickAdd && (

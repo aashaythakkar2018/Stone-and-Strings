@@ -2,13 +2,14 @@ import { Button } from '@/components/ui/Button';
 import { IconCheck } from '@/components/ui/Icons';
 import { useSizeGuide } from '@/components/product/SizeGuide';
 import { heroTrust } from '@/data/site';
-import windowShadow from '@/assets/images/window-shadow.webp';
+import { photo } from '@/data/photos';
 import './sections.css';
 
 /**
  * home-hero (Homepage V2 #3) — the only H1 on the homepage. Leads with the disclosure promise
  * (the moat: honest labeling + a trained gemologist) instead of "meaning", which moves to the body.
- * The photo panel keeps the brand-kit window-light treatment until the real shoot lands.
+ * The panel is the studio display shot (bracelets on white plinths), cropped 4:5 with the dark
+ * strips at the photo's edges removed. Swap for a "Vidhi's hands stringing" shot when it exists.
  */
 export function Hero() {
   const { openSizeGuide } = useSizeGuide();
@@ -37,10 +38,15 @@ export function Hero() {
           </ul>
         </div>
 
-        {/* PRODUCTION IMG: Vidhi's hands stringing a bracelet, natural light (4:5) */}
-        <div className="hero__photo" role="img" aria-label="Vidhi's hands stringing a gemstone bracelet in natural light">
-          <div className="hero__shadow" style={{ backgroundImage: `url(${windowShadow})` }} aria-hidden="true" />
-          <span className="hero__photo-note" aria-hidden="true">Photo · Vidhi's hands stringing a bracelet, natural light</span>
+        <div className="hero__photo">
+          <img
+            src={photo('editorial/hero-display')}
+            alt="Handmade bracelets in pearl, amethyst, apatite, turquoise and aventurine styled on white plinths in the Stone & Strings studio"
+            width={1200}
+            height={1500}
+            fetchPriority="high"
+            decoding="async"
+          />
         </div>
       </div>
     </section>
