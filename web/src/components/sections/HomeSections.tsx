@@ -212,28 +212,34 @@ export function StudioBand() {
   );
 }
 
-/* home-custom — the strategic front door; photo band with copy over the empty backdrop on the left */
+/* home-custom — the strategic front door. Split layout after 21st.dev "Split Content Section" (content-06):
+   serif headline + copy + CTA in one column, framed photo in the other. */
 export function PromotionalBanner() {
   return (
-    <section id="custom" className="customstrip" data-ss-section="home-custom" aria-labelledby="h-custom">
-      <img
-        className="customstrip__img"
-        src={photo('editorial/banner-hanging-wide')}
-        alt="Pearl, tiger's-eye and aventurine bracelets hanging from a chrome rod in the studio"
-        width={2560}
-        height={1197}
-        loading="lazy"
-        decoding="async"
-      />
-      <Reveal className="customstrip__in">
-        <p className="eyebrow">The Custom Studio</p>
-        <h2 id="h-custom">Made for the story only you have</h2>
-        <p>
-          An initial, a word you live by, a family's birthstones. Tell Vidhi the meaning and she'll design the piece around
-          it. Custom pieces start at $125.
-        </p>
-        <Button to="/pages/custom" variant="cream">Start a custom piece</Button>
-      </Reveal>
+    <section id="custom" className="custom" data-ss-section="home-custom" aria-labelledby="h-custom">
+      <div className="wrap">
+        <div className="custom__card">
+          <Reveal className="custom__copy">
+            <p className="eyebrow">The Custom Studio</p>
+            <h2 id="h-custom">Made for the story only you have</h2>
+            <p className="custom__body">
+              An initial, a word you live by, a family's birthstones. Tell Vidhi the meaning and she'll design the piece around
+              it. Custom pieces start at $125.
+            </p>
+            <div><Button to="/pages/custom" variant="cream">Start a custom piece</Button></div>
+          </Reveal>
+          <div className="custom__media">
+            <img
+              src={photo('editorial/banner-hanging-wide')}
+              alt="Pearl, tiger's-eye and aventurine bracelets hanging from a chrome rod in the studio"
+              width={2560}
+              height={1197}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
