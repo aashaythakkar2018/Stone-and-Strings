@@ -2,7 +2,7 @@ import { useSeo } from '@/hooks/useSeo';
 import { site } from '@/data/site';
 import { Hero } from '@/components/sections/Hero';
 import { IntentionCards } from '@/components/sections/CategoryGrid';
-import { BuildYourStack, FeaturedProducts, MeetVidhi, Pledge, PromotionalBanner, StonesTeaser } from '@/components/sections/HomeSections';
+import { BuildYourStack, FeaturedProducts, MeetVidhi, Pledge, PromotionalBanner, StonesTeaser, StudioBand } from '@/components/sections/HomeSections';
 import { Newsletter } from '@/components/sections/Newsletter';
 import { Reveal } from '@/components/ui/Motion';
 
@@ -37,6 +37,7 @@ export default function Home() {
       </section>
       <Pledge />
       <FeaturedProducts />
+      <StudioBand />
       <BuildYourStack />
       <MeetVidhi />
       <StonesTeaser />

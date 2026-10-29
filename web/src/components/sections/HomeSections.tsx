@@ -190,10 +190,41 @@ export function StonesTeaser() {
   );
 }
 
-/* home-custom — the strategic front door */
+/* home-studio-band — full-bleed studio photo; the cream on its right carries one line of copy */
+export function StudioBand() {
+  return (
+    <section className="band" data-ss-section="home-studio-band" aria-label="In the studio">
+      <img
+        className="band__img"
+        src={photo('editorial/banner-studio-wide')}
+        alt="Handmade bracelets in pearl, turquoise, amethyst and apatite styled on white plinths in the Stone & Strings studio"
+        width={2560}
+        height={1080}
+        loading="lazy"
+        decoding="async"
+      />
+      <Reveal className="band__copy">
+        <p className="eyebrow">Georgia, USA</p>
+        <h2>Strung one at a time.</h2>
+        <Button to="/collections/all" variant="ghost">Shop all bracelets</Button>
+      </Reveal>
+    </section>
+  );
+}
+
+/* home-custom — the strategic front door; photo band with copy over the empty backdrop on the left */
 export function PromotionalBanner() {
   return (
     <section id="custom" className="customstrip" data-ss-section="home-custom" aria-labelledby="h-custom">
+      <img
+        className="customstrip__img"
+        src={photo('editorial/banner-hanging-wide')}
+        alt="Pearl, tiger's-eye and aventurine bracelets hanging from a chrome rod in the studio"
+        width={2560}
+        height={1197}
+        loading="lazy"
+        decoding="async"
+      />
       <Reveal className="customstrip__in">
         <p className="eyebrow">The Custom Studio</p>
         <h2 id="h-custom">Made for the story only you have</h2>

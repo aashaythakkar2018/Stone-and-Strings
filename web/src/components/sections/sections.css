@@ -111,14 +111,31 @@
 .stone6__meta { font-size: 13px; color: var(--ink-soft); margin-top: -6px; }
 
 /* ── custom studio banner ── */
-.customstrip { background: var(--rust); color: var(--paper); text-align: center; }
+.customstrip { position: relative; background: var(--rust); color: var(--paper); }
+.customstrip__img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: 78% 50%; }
 .customstrip__in {
-  max-width: 760px; margin: 0 auto; padding: clamp(64px, 8vw, 88px) var(--gutter);
-  display: flex; flex-direction: column; align-items: center; gap: 18px;
+  padding: clamp(40px, 8vw, 64px) var(--gutter) clamp(48px, 8vw, 72px);
+  display: flex; flex-direction: column; align-items: flex-start; gap: 18px; text-align: left;
 }
 .customstrip .eyebrow { color: var(--sand); }
-.customstrip h2 { font-size: clamp(36px, 4.4vw, 48px); line-height: 1.05; color: var(--paper); }
+.customstrip h2 { font-size: clamp(34px, 4.4vw, 48px); line-height: 1.05; color: var(--paper); }
 .customstrip__in > p:not(.eyebrow) { max-width: 52ch; font-size: 17px; color: var(--paper); }
+@media (min-width: 900px) {
+  .customstrip { min-height: clamp(460px, 44vw, 620px); display: flex; align-items: center; background: #4a3a38; }
+  .customstrip__img { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; object-position: 100% 50%; }
+  .customstrip::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(38, 27, 25, .62) 0%, rgba(38, 27, 25, .35) 38%, rgba(38, 27, 25, 0) 58%); }
+  .customstrip__in { position: relative; z-index: 1; width: min(520px, 44%); padding: 64px 0 64px max(var(--gutter), calc((100vw - var(--maxw)) / 2 + var(--gutter))); }
+}
+
+/* ── studio band ── */
+.band { position: relative; background: var(--paper); }
+.band__img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 30% 50%; }
+.band__copy { padding: 32px var(--gutter) 40px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.band__copy h2 { font-size: clamp(30px, 3.4vw, 40px); line-height: 1.05; }
+@media (min-width: 900px) {
+  .band__img { aspect-ratio: 2560 / 1080; object-position: center; }
+  .band__copy { position: absolute; top: 50%; right: clamp(24px, 4vw, 64px); width: min(23%, 340px); padding: 0; transform: translateY(-50%); }
+}
 
 /* ── newsletter (V2: on cream) ── */
 .news { background: var(--paper); color: var(--ink); }
